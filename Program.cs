@@ -1,4 +1,7 @@
-﻿namespace Emoji_Based_Anime_Recommender
+﻿using System;
+using EBAR_BL;
+
+namespace Emoji_Based_Anime_Recommender
 {
     internal class Program
     {
@@ -15,7 +18,7 @@
         {
             Console.WriteLine("Emoji-based Anime Series Recommendation");
             Console.WriteLine("The Recommendation is limited to 3 only (temporary)");
-
+                 
             Console.WriteLine();
 
             string userName;

@@ -8,4 +8,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="EBAR_BL\**" />
+    <EmbeddedResource Remove="EBAR_BL\**" />
+    <None Remove="EBAR_BL\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="EBAR_BL\EBAR_BL.csproj" />
+  </ItemGroup>
+
 </Project>
