@@ -10,7 +10,7 @@ namespace EBAR_BL
     {
         public static bool ValidateEmptyUserName(string userName)
         {
-            if (string.IsNullOrEmpty(userName))
+            if (string.IsNullOrWhiteSpace(userName))
             {
                 return true;
             }

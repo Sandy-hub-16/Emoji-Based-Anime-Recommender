@@ -32,7 +32,7 @@ namespace Emoji_Based_Anime_Recommender
                 {
                     Console.WriteLine("Username cannot be empty. Please Try Again.");
                 }
-            } while (string.IsNullOrEmpty(userName));
+            } while (string.IsNullOrWhiteSpace(userName));
 
             Console.WriteLine($"Konnichiwa, {userName}!, How are you feeling today?");
 
