@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace EBAR_BL
 {
     public class EBARProcess
@@ -16,5 +17,7 @@ namespace EBAR_BL
             }
             return false;
         }
+
+       
     }
 }
