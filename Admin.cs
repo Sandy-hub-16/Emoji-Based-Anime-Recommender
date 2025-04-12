@@ -9,10 +9,10 @@ namespace Emoji_Based_Anime_Recommender
 {
     public class Admin 
     {
-        AdminActions adminActions = new AdminActions();
+       
 
 
-        public void SelectedEmoji()
+        public void AddSelectedEmoji()
         {
             while (true)
             {
@@ -21,21 +21,24 @@ namespace Emoji_Based_Anime_Recommender
                    adminInput == "like".ToLower().Trim() ||
                    adminInput == "like emoji".ToLower().Trim())
                 {
-                    AddedLikeEmoji();
+                    AddAnimeToEmojiListInterface(AdminActions.likeEmojis);
+                    ReturnHome();
 
                 }
                 else if (adminInput == "b" ||
                    adminInput == "heart".ToLower().Trim() ||
                    adminInput == "heart emoji".ToLower().Trim())
                 {
-                    AddedHeartEmoji();
+                    AddAnimeToEmojiListInterface(AdminActions.heartEmojis);
+                    ReturnHome();
 
                 }
                 else if (adminInput == "c" ||
                    adminInput == "laugh".ToLower().Trim() ||
                    adminInput == "laugh emoji".ToLower().Trim())
                 {
-                    AddedLaughEmoji();
+                    AddAnimeToEmojiListInterface(AdminActions.laughEmojis);
+                    ReturnHome();
 
                 }
 
@@ -43,14 +46,16 @@ namespace Emoji_Based_Anime_Recommender
                    adminInput == "wow".ToLower().Trim() ||
                    adminInput == "wow emoji".ToLower().Trim())
                 {
-                    AddedWowEmoji();
+                    AddAnimeToEmojiListInterface(AdminActions.wowEmojis);
+                    ReturnHome();
 
                 }
                 else if (adminInput == "e" ||
                    adminInput == "sad".ToLower().Trim() ||
                    adminInput == "sad emoji".ToLower().Trim())
                 {
-                    AddedSadEmoji();
+                    AddAnimeToEmojiListInterface(AdminActions.sadEmojis);
+                    ReturnHome();
 
                 }
                 else if (adminInput == "f" ||
@@ -58,61 +63,46 @@ namespace Emoji_Based_Anime_Recommender
                    adminInput == "angry emoji".ToLower().Trim())
                 {
 
-                    AddedAngryEmoji();
+                    AddAnimeToEmojiListInterface(AdminActions.angryEmojis);
+                    ReturnHome();
                 }
                 else
                 {
                     Console.WriteLine("Invalid Input");
                 }
 
-                ReturnHome(adminInput);
+                
             }
 
 
 
         }
-        public void AddedLikeEmoji()
-        {
-            Console.Write("Add Anime : ");
-            string animeAdd = Console.ReadLine().Trim();
-            adminActions.addAnimeBasedOnEmoji(animeAdd, adminActions.likeEmojis);
-        }   
-        public void AddedHeartEmoji()
-        {
-            Console.Write("Add Anime : ");
-            string animeAdd = Console.ReadLine().Trim();
-            adminActions.addAnimeBasedOnEmoji(animeAdd, adminActions.heartEmojis);
-        }
-        public void AddedLaughEmoji()
-        {
-            Console.Write("Add Anime : ");
-            string animeAdd = Console.ReadLine().Trim();
-            adminActions.addAnimeBasedOnEmoji(animeAdd, adminActions.laughEmojis);
-        }
-        public void AddedWowEmoji()
-        {
-            Console.Write("Add Anime : ");
-            string animeAdd = Console.ReadLine().Trim();
-            adminActions.addAnimeBasedOnEmoji(animeAdd, adminActions.wowEmojis);
-        }
-        public void AddedSadEmoji()
-        {
-            Console.Write("Add Anime : ");
-            string animeAdd = Console.ReadLine().Trim();
-            adminActions.addAnimeBasedOnEmoji(animeAdd, adminActions.sadEmojis);
-        }
-        public void AddedAngryEmoji()
-        {
-            Console.Write("Add Anime : ");
-            string animeAdd = Console.ReadLine().Trim();
-            adminActions.addAnimeBasedOnEmoji(animeAdd, adminActions.angryEmojis);
-        }
-        public void ReturnHome(string adminInput)
-        {
 
-            if (adminInput.Equals("h".ToLower()) || adminInput == "home".ToLower().Trim())
+        #region -- Adding Anime Series Based on Emoji Types (Function) --
+
+        public void AddAnimeToEmojiListInterface(List<string> emojiList)
+        {
+            Console.Write("Add Anime : ");
+            string animeAdd = Console.ReadLine().Trim();
+            AdminActions.addAnimeBasedOnEmoji(animeAdd, emojiList);
+
+        }
+        #endregion
+
+       
+
+        public void ReturnHome()
+        {
+            Console.Write("Type [H] to return Home OR Type any key to add another : ");
+            string input = Console.ReadLine().ToLower().Trim();
+
+            if (input == "h" || input == "home")
             {
                 Program.MainMenu();
+            }
+            else
+            {
+                AddSelectedEmoji();
             }
         }
 
@@ -133,20 +123,23 @@ namespace Emoji_Based_Anime_Recommender
 
                 if (adminInput.Equals("1") || adminInput == "add")
                 {
-                    Console.WriteLine("SELECT EMOJI : ");
+                    Console.WriteLine("SELECT EMOJI to ADD on the list : ");
                     User.DisplayEmoji();
                    
                     
                    
-                    SelectedEmoji();
+                    AddSelectedEmoji();
                     
                     break;
                 }
 
                 else if (adminInput.Equals("2") || adminInput == "delete")
                 {
-                    
-                    adminActions.RemoveAnimeBasedOnEmoji(); // no function yet..
+                    Console.WriteLine("SELECT EMOJI to DELETE on the list: ");
+                    User.DisplayEmoji();
+
+                    User.GetUserInput();
+
                     break;
                 }
 

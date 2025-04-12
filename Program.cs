@@ -13,11 +13,9 @@ namespace Emoji_Based_Anime_Recommender
         }
 
        
-       
         public static void MainMenu()
         {
             Console.WriteLine("Emoji-based Anime Series Recommendation");
-            Console.WriteLine("The Recommendation is limited to 3 only (temporary)\n");
 
             string confirmIdentity;
 
@@ -25,7 +23,7 @@ namespace Emoji_Based_Anime_Recommender
 
             while (true)
             {
-                Console.WriteLine("***************************************");
+                Console.WriteLine("---------------------------------");
                 Console.WriteLine("IDENTITY CONFIRMATION");
                 foreach (string identity in identities)
                 {

@@ -42,29 +42,29 @@ namespace Emoji_Based_Anime_Recommender
 
 
             string userInput = GetUserInput();
-            AdminActions adminActions = new AdminActions();
+            
 
             while (userInput != "x".ToLower())
             {
                 switch (userInput.ToLower())
                 {
                     case "a":
-                        DisplayAnimeSeriesList("LIKE",adminActions.likeEmojis);
+                        DisplayAnimeSeriesList("LIKE",AdminActions.likeEmojis);
                         break;
                     case "b":
-                        DisplayAnimeSeriesList("HEART", adminActions.heartEmojis);
+                        DisplayAnimeSeriesList("HEART", AdminActions.heartEmojis);
                         break;
                     case "c":
-                        DisplayAnimeSeriesList("LAUGH", adminActions.laughEmojis);
+                        DisplayAnimeSeriesList("LAUGH", AdminActions.laughEmojis);
                         break;
                     case "d":
-                        DisplayAnimeSeriesList("WOW", adminActions.wowEmojis);
+                        DisplayAnimeSeriesList("WOW", AdminActions.wowEmojis);
                         break;
                     case "e":
-                        DisplayAnimeSeriesList("LIKE", adminActions.sadEmojis);
+                        DisplayAnimeSeriesList("LIKE", AdminActions.sadEmojis);
                         break;
                     case "f":
-                        DisplayAnimeSeriesList("LIKE", adminActions.angryEmojis);
+                        DisplayAnimeSeriesList("LIKE", AdminActions.angryEmojis);
                         break;
                     case "g":
                         //SetAnimeSeriesList("Random", "Steins Gate", "Erased", "Black Clover");
