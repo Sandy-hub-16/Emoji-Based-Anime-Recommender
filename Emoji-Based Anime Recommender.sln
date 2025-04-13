@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Emoji_Based_Anime_Recommend
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBAR_BL", "EBAR_BL\EBAR_BL.csproj", "{D9589FF0-84B8-4A60-9313-F9FD467245D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBARDataLogic", "EBARDataLogic\EBARDataLogic.csproj", "{B56F06A3-5638-45FB-B2D0-4202B08D215C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D9589FF0-84B8-4A60-9313-F9FD467245D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9589FF0-84B8-4A60-9313-F9FD467245D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9589FF0-84B8-4A60-9313-F9FD467245D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B56F06A3-5638-45FB-B2D0-4202B08D215C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B56F06A3-5638-45FB-B2D0-4202B08D215C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B56F06A3-5638-45FB-B2D0-4202B08D215C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B56F06A3-5638-45FB-B2D0-4202B08D215C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

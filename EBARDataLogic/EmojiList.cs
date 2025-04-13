@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EBAR_BL
+namespace EBARDataLogic
 {
     // class made static >> kasi pag iniinstantiate sa ibang class narireset ung list (nabalik sa default na list) ->
     //                   >> d nauupdate yung list
-    public static class AdminActions
+    public static class EmojiList
     {
         public static List<string> likeEmojis = new List<string> { "One Piece", "Naruto", "DragonBall" };
         public static List<string> heartEmojis = new List<string> { "Kimi Ni Todoke", "Kaguya-sama: Love Is War", "Fruits Basket" };
@@ -17,19 +17,43 @@ namespace EBAR_BL
         public static List<string> sadEmojis = new List<string> { "A Silent Voice", "Your Lie in April", "Anohana: The Flower We Saw That Day" };
         public static List<string> angryEmojis = new List<string> { "Attack on Titan", "One Punch Man", "Vinland Saga" };
 
-        public static void addAnimeBasedOnEmoji(string anime, List<string> emojiType)
+        public static string AddAnimeBasedOnEmoji(string anime, List<string> emojiType)
         {
-            if(string.IsNullOrEmpty(anime))
+            if (string.IsNullOrEmpty(anime))
             {
-                Console.WriteLine("Input cannot be empty...");
+                return "Input cannot be empty...";
             }
-            else
+            
+
+            emojiType.Add(anime);
+            UpdatedAnimeList(emojiType);
+            return $"{anime} added to the list.";
+                
+            
+
+
+        }
+
+        public static string RemoveAnimeBasedOnEmoji(string anime, List<string> emojiList)
+        {
+            if (string.IsNullOrEmpty(anime))
             {
-                emojiType.Add(anime);
-                Console.WriteLine($"{anime} added to the list.");
-                UpdatedAnimeList(emojiType);
+                return "Input cannot be empty...";
             }
-       
+
+            else if (emojiList.Contains(anime))
+            {
+                emojiList.Remove(anime);
+                UpdatedAnimeList(emojiList);
+                return $"Anime : {anime} has been removed to the list";
+                
+            }
+
+            
+                return $"Anime : {anime} doesn't exist from the list";
+            
+
+
         }
 
         public static void UpdatedAnimeList(List<string> emojiType)
@@ -40,16 +64,5 @@ namespace EBAR_BL
                 Console.WriteLine(anime);
             }
         }
-        public static void RemoveAnimeBasedOnEmoji()
-        {
-      
-        }
-
-       
-
-
-
-
-
     }
 }

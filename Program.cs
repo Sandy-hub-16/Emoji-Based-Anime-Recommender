@@ -8,7 +8,10 @@ namespace Emoji_Based_Anime_Recommender
      
         static void Main(string[] args)
         {
-            MainMenu();
+            while (true)
+            {
+                MainMenu();
+            }
 
         }
 
@@ -19,10 +22,9 @@ namespace Emoji_Based_Anime_Recommender
 
             string confirmIdentity;
 
-            string[] identities = { "[1]Admin", "[2]User" };
+            string[] identities = { "[1]Admin", "[2]User","[X]EXIT" };
 
-            while (true)
-            {
+           
                 Console.WriteLine("---------------------------------");
                 Console.WriteLine("IDENTITY CONFIRMATION");
                 foreach (string identity in identities)
@@ -30,20 +32,26 @@ namespace Emoji_Based_Anime_Recommender
                     Console.WriteLine(identity);
                 }
                 Console.Write("Input : ");
-                confirmIdentity = Console.ReadLine().ToLower();
+                confirmIdentity = Console.ReadLine().ToLower().Trim();
 
                 if (confirmIdentity.Equals("1") || confirmIdentity == "admin")
                 {
                     Admin admin = new Admin();
                     admin.ShowAdminMenu();
-                    break;
+                 
                 }
 
                 else if (confirmIdentity.Equals("2") || confirmIdentity == "user")
                 {
                     User user = new User();
                     user.RunAsUser();
-                    break;
+                
+                }
+                else if (confirmIdentity.Equals("x") || confirmIdentity == "exit")
+                {
+                    Console.WriteLine("Bye!");
+                    Environment.Exit(0);
+                    
                 }
                 else if (string.IsNullOrWhiteSpace(confirmIdentity))
                 {
@@ -54,7 +62,7 @@ namespace Emoji_Based_Anime_Recommender
                     Console.WriteLine("Enter existing choices only");
                 }
 
-            }
+            
         }
 
        

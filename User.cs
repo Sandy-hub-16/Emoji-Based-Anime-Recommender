@@ -20,16 +20,18 @@ namespace Emoji_Based_Anime_Recommender
                                 "\n[H] HOME",
                                 "\n[X] EXIT"
                             };
+
+        EBARProcess eBARProcess = new EBARProcess();
         public void RunAsUser()
         {
             string userName;
-
+            
             do
             {
                 Console.Write("Enter Username : ");
                 userName = Console.ReadLine();
-
-                if (EBARProcess.ValidateEmptyUserName(userName))
+              
+                if (eBARProcess.ValidateEmptyUserName(userName))
                 {
                     Console.WriteLine("Username cannot be empty. Please Try Again.");
                 }
@@ -43,36 +45,40 @@ namespace Emoji_Based_Anime_Recommender
 
             string userInput = GetUserInput();
             
+            
 
             while (userInput != "x".ToLower())
             {
+                List<string> emojiList = eBARProcess.GetEmojiList(userInput);
+
+           
+               
                 switch (userInput.ToLower())
-                {
+                {            
                     case "a":
-                        DisplayAnimeSeriesList("LIKE",AdminActions.likeEmojis);
+                        DisplayAnimeSeriesList("LIKE",emojiList);
                         break;
                     case "b":
-                        DisplayAnimeSeriesList("HEART", AdminActions.heartEmojis);
+                        DisplayAnimeSeriesList("HEART", emojiList);
                         break;
                     case "c":
-                        DisplayAnimeSeriesList("LAUGH", AdminActions.laughEmojis);
+                        DisplayAnimeSeriesList("LAUGH", emojiList);
                         break;
                     case "d":
-                        DisplayAnimeSeriesList("WOW", AdminActions.wowEmojis);
+                        DisplayAnimeSeriesList("WOW", emojiList);
                         break;
                     case "e":
-                        DisplayAnimeSeriesList("LIKE", AdminActions.sadEmojis);
+                        DisplayAnimeSeriesList("SAD", emojiList);
                         break;
                     case "f":
-                        DisplayAnimeSeriesList("LIKE", AdminActions.angryEmojis);
+                        DisplayAnimeSeriesList("ANGRY", emojiList);
                         break;
                     case "g":
-                        //SetAnimeSeriesList("Random", "Steins Gate", "Erased", "Black Clover");
+                        Console.WriteLine("Random Anime : ");
+                        Console.WriteLine(eBARProcess.GetRandomAnimeFromAllEmojis());
                         break;
                     case "h":
-                        Program.MainMenu();
-                        break;
-
+                        return; // return to MainMenu() or the previous method na nagcall kay RunAsUser();
                     default:
                         Console.WriteLine("Please enter the existing letters only");
                         break;
@@ -82,14 +88,11 @@ namespace Emoji_Based_Anime_Recommender
                 userInput = GetUserInput();
 
 
-
-                if (userInput == "x".ToLower())
-                {
-                    Console.WriteLine("Goodbye! See you in the next episode!");
-                    break;
-                }
-
-
+            }
+            if (userInput == "x".ToLower())
+            {
+                Console.WriteLine("Goodbye! See you in the next episode!");              
+                Environment.Exit(0);
             }
         }
 
@@ -117,7 +120,7 @@ namespace Emoji_Based_Anime_Recommender
         public static string GetUserInput()
         {
             Console.Write("Input : ");
-            string userInput = Console.ReadLine();
+            string userInput = Console.ReadLine().ToLower().Trim();
 
             return userInput;
         }
