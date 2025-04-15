@@ -1,4 +1,5 @@
 ﻿using EBAR_BL;
+using EBARDataLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace Emoji_Based_Anime_Recommender
 
         public void ShowAdminMenu()
         {
-            string[] updateAnimeSeriesList = {"[1]Add", "[2]Delete","[H]HOME","[X]EXIT"};
+            string[] updateAnimeSeriesList = {"[1]Add", "[2]Delete", "[3]View Anime List", "[H]HOME","[X]EXIT"};
 
             
 
@@ -24,17 +25,15 @@ namespace Emoji_Based_Anime_Recommender
                 {
                     Console.WriteLine(updateList);
                 }
-                string adminInput = User.GetUserInput();
+                string adminInput = User.GetInput("Choose Options : ");
 
                 if (adminInput.Equals("1") || adminInput == "add")
                 {
                     Console.WriteLine("SELECT EMOJI to ADD on the list : ");
                     User.DisplayEmoji();
                    
-                    
-                   
-                    EBARProcess eBARProcess = new EBARProcess();
-                    eBARProcess.SelectedEmojiToAdd();
+                                              
+                    SelectedEmojiToAdd();
                     
                
                 }
@@ -44,9 +43,15 @@ namespace Emoji_Based_Anime_Recommender
                     Console.WriteLine("SELECT EMOJI to DELETE on the list: ");
                     User.DisplayEmoji();
 
-                    
-                    EBARProcess eBARProcess = new EBARProcess();
-                    eBARProcess.RemoveAnimeToEmojiList();
+
+
+                    SelectedEmojiToRemove();
+
+                    break;
+                }
+                else if (adminInput.Equals("3") || adminInput == "view anime list")
+                {
+                    //UpdatedAnimeList();
 
                     break;
                 }
@@ -72,7 +77,158 @@ namespace Emoji_Based_Anime_Recommender
                 }
             }
         }
-      
+
+        public static void UpdatedAnimeList(List<string> emojiType)
+        {
+            Console.WriteLine($"UPDATE LIST:");
+            foreach (var anime in emojiType)
+            {
+                Console.WriteLine(anime);
+            }
+        }
+
+        #region -- Add Function --
+
+        public void SelectedEmojiToAdd()
+        {
+
+            while (true)
+            {
+                string adminInput = User.GetInput("Enter Emoji to Add : ");
+                if (adminInput == "a" || adminInput == "like" || adminInput == "like emoji")
+                    AddAnimeToEmojiListInterface(EmojiList.likeEmojis);
+
+                else if (adminInput == "b" || adminInput == "heart" || adminInput == "heart emoji")
+                    AddAnimeToEmojiListInterface(EmojiList.heartEmojis);
+
+                else if (adminInput == "c" || adminInput == "laugh" || adminInput == "laugh emoji")
+                    AddAnimeToEmojiListInterface(EmojiList.laughEmojis);
+
+                else if (adminInput == "d" || adminInput == "wow" || adminInput == "wow emoji")
+                    AddAnimeToEmojiListInterface(EmojiList.wowEmojis);
+
+                else if (adminInput == "e" || adminInput == "sad" || adminInput == "sad emoji")
+                    AddAnimeToEmojiListInterface(EmojiList.sadEmojis);
+
+                else if (adminInput == "f" || adminInput == "angry" || adminInput == "angry emoji")
+                    AddAnimeToEmojiListInterface(EmojiList.angryEmojis);
+
+                else
+                {
+                    Console.WriteLine("Invalid Input");
+                }
+            
+                string input = User.GetInput("Type [B] to go back to Admin Menu OR Type any key to add another : ");
+
+                if (input == "b" || input == "back")
+                {
+                    return;
+                }
+
+            }
+
+        }
+        public void AddAnimeToEmojiListInterface(List<string> emojiList)
+        {
+            Console.Write("Add Anime : ");
+            string animeAdd = Console.ReadLine().Trim();
+            Console.WriteLine(ValidateAddedAnime(animeAdd, emojiList));
+
+        }
+        public string ValidateAddedAnime(string anime, List<string> emojiType)
+        {
+            if (string.IsNullOrEmpty(anime))
+            {
+                return "Input cannot be empty...";
+            }
+
+            else if (emojiType.Contains(anime))
+            {
+                return $"Anime : {anime} already exists from the list";
+            }
+
+            emojiType.Add(anime);
+            return $"{anime} added to the list.";
+
+        }
+
+        #endregion
+
+        #region -- Remove Function --
+        public void SelectedEmojiToRemove()
+        {
+            List<string> selectedEmojiList = null;
+            while (true)
+            {
+                
+                string adminInput = User.GetInput("Enter Emoji to Remove : ");
+                EBARProcess getEmoji = new EBARProcess();
+
+                if (adminInput == "a" || adminInput == "like" || adminInput == "like emoji")
+                    selectedEmojiList = getEmoji.GetEmojiList("a");
+
+                else if (adminInput == "b" || adminInput == "heart" || adminInput == "heart emoji")
+                    selectedEmojiList = getEmoji.GetEmojiList("b");
+
+                else if (adminInput == "c" || adminInput == "laugh" || adminInput == "laugh emoji")
+                    selectedEmojiList = getEmoji.GetEmojiList("c");
+
+                else if (adminInput == "d" || adminInput == "wow" || adminInput == "wow emoji")
+                    selectedEmojiList = getEmoji.GetEmojiList("d");
+
+                else if (adminInput == "e" || adminInput == "sad" || adminInput == "sad emoji")
+                    selectedEmojiList = getEmoji.GetEmojiList("e");
+
+                else if (adminInput == "f" || adminInput == "angry" || adminInput == "angry emoji")
+                    selectedEmojiList = getEmoji.GetEmojiList("f");
+
+                else
+                {
+                    Console.WriteLine("Invalid Input");
+                }
+
+                foreach (var animeList in selectedEmojiList)
+                {
+                    Console.WriteLine(animeList);
+                }
+
+                RemoveAnimeToEmojiListInterface(selectedEmojiList);
+                string continueOrNotInput = User.GetInput("Type [B] to go back to Admin Menu or type any key to delete another anime : ");
+
+                if (continueOrNotInput == "h")
+                {
+                    return;
+                }
+            }
+
+        }
+
+        public void RemoveAnimeToEmojiListInterface(List<string> selectedEmojiList)
+        {
+            string animeRemove = User.GetInput("Remove Anime : ");
+            Console.WriteLine(ValidateRemovedAnime(animeRemove, selectedEmojiList));
+        }
+
+        public string ValidateRemovedAnime(string anime, List<string> emojiList)
+        {
+            if (string.IsNullOrEmpty(anime))
+            {
+                return "Input cannot be empty...";
+            }
+
+            else if (emojiList.Contains(anime))
+            {
+                emojiList.Remove(anime);
+
+                return $"Anime : {anime} has been removed to the list";
+
+            }
+
+
+            return $"Anime : {anime} doesn't exist from the list";
+        }
+
+        #endregion
 
 
 

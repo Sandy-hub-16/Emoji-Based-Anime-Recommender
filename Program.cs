@@ -31,8 +31,8 @@ namespace Emoji_Based_Anime_Recommender
                 {
                     Console.WriteLine(identity);
                 }
-                Console.Write("Input : ");
-                confirmIdentity = Console.ReadLine().ToLower().Trim();
+
+                    confirmIdentity = User.GetInput("Choose Identity : ");
 
                 if (confirmIdentity.Equals("1") || confirmIdentity == "admin")
                 {
@@ -49,7 +49,7 @@ namespace Emoji_Based_Anime_Recommender
                 }
                 else if (confirmIdentity.Equals("x") || confirmIdentity == "exit")
                 {
-                    Console.WriteLine("Bye!");
+                    Console.WriteLine("Bye, Mr./Miss Unknown!");
                     Environment.Exit(0);
                     
                 }

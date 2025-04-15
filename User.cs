@@ -43,7 +43,7 @@ namespace Emoji_Based_Anime_Recommender
 
 
 
-            string userInput = GetUserInput();
+            string userInput = GetInput("Choose Emoji : ");
             
             
 
@@ -85,7 +85,7 @@ namespace Emoji_Based_Anime_Recommender
                 }
 
                 DisplayEmoji();
-                userInput = GetUserInput();
+                userInput = GetInput("Choose Emoji : ");
 
 
             }
@@ -117,9 +117,9 @@ namespace Emoji_Based_Anime_Recommender
             }
         }
 
-        public static string GetUserInput()
+        public static string GetInput(string typeofInput)
         {
-            Console.Write("Input : ");
+            Console.Write($"{typeofInput}");
             string userInput = Console.ReadLine().ToLower().Trim();
 
             return userInput;
