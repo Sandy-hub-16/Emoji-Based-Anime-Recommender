@@ -78,7 +78,7 @@ namespace Emoji_Based_Anime_Recommender
             }
         }
 
-        public static void UpdatedAnimeList(List<string> emojiType)
+        public void UpdatedAnimeList(List<string> emojiType)
         {
             Console.WriteLine($"UPDATE LIST:");
             foreach (var anime in emojiType)
@@ -160,33 +160,34 @@ namespace Emoji_Based_Anime_Recommender
             List<string> selectedEmojiList = null;
             while (true)
             {
-                
-                string adminInput = User.GetInput("Enter Emoji to Remove : ");
-                EBARProcess getEmoji = new EBARProcess();
+                string adminInput = User.GetInput("Enter Emoji to Delete : ");
+
 
                 if (adminInput == "a" || adminInput == "like" || adminInput == "like emoji")
-                    selectedEmojiList = getEmoji.GetEmojiList("a");
+                    selectedEmojiList = EmojiList.likeEmojis;
 
                 else if (adminInput == "b" || adminInput == "heart" || adminInput == "heart emoji")
-                    selectedEmojiList = getEmoji.GetEmojiList("b");
+                    selectedEmojiList = EmojiList.heartEmojis;
 
                 else if (adminInput == "c" || adminInput == "laugh" || adminInput == "laugh emoji")
-                    selectedEmojiList = getEmoji.GetEmojiList("c");
+                    selectedEmojiList = EmojiList.laughEmojis;
 
                 else if (adminInput == "d" || adminInput == "wow" || adminInput == "wow emoji")
-                    selectedEmojiList = getEmoji.GetEmojiList("d");
+                    selectedEmojiList = EmojiList.wowEmojis;
 
                 else if (adminInput == "e" || adminInput == "sad" || adminInput == "sad emoji")
-                    selectedEmojiList = getEmoji.GetEmojiList("e");
+                    selectedEmojiList = EmojiList.sadEmojis;
 
                 else if (adminInput == "f" || adminInput == "angry" || adminInput == "angry emoji")
-                    selectedEmojiList = getEmoji.GetEmojiList("f");
+                    selectedEmojiList = EmojiList.angryEmojis;
 
                 else
                 {
                     Console.WriteLine("Invalid Input");
+                    continue; // skips the next line of codes and go back to the top of the loop -> "Enter Emoji to Remove : "
                 }
 
+                Console.WriteLine("Current Anime List : ");
                 foreach (var animeList in selectedEmojiList)
                 {
                     Console.WriteLine(animeList);
@@ -195,7 +196,7 @@ namespace Emoji_Based_Anime_Recommender
                 RemoveAnimeToEmojiListInterface(selectedEmojiList);
                 string continueOrNotInput = User.GetInput("Type [B] to go back to Admin Menu or type any key to delete another anime : ");
 
-                if (continueOrNotInput == "h")
+                if (continueOrNotInput == "b")
                 {
                     return;
                 }
@@ -205,27 +206,30 @@ namespace Emoji_Based_Anime_Recommender
 
         public void RemoveAnimeToEmojiListInterface(List<string> selectedEmojiList)
         {
-            string animeRemove = User.GetInput("Remove Anime : ");
+            string animeRemove = User.GetInput("Delete Anime : ");
             Console.WriteLine(ValidateRemovedAnime(animeRemove, selectedEmojiList));
         }
 
-        public string ValidateRemovedAnime(string anime, List<string> emojiList)
+        public string ValidateRemovedAnime(string animeInput, List<string> emojiList)
         {
+            string anime = animeInput.ToUpper().Trim();
             if (string.IsNullOrEmpty(anime))
             {
                 return "Input cannot be empty...";
             }
 
-            else if (emojiList.Contains(anime))
+            else if (!emojiList.Contains(anime))
             {
-                emojiList.Remove(anime);
 
-                return $"Anime : {anime} has been removed to the list";
-
+                return $"Anime : {anime} doesn't exist from the list";
             }
 
+            emojiList.Remove(anime);
 
-            return $"Anime : {anime} doesn't exist from the list";
+            return $"Anime : {anime} has been removed to the list";
+
+
+            
         }
 
         #endregion

@@ -10,13 +10,14 @@ namespace EBARDataLogic
     {
         // class made static >> kasi pag iniinstantiate sa ibang class narireset ung list (nabalik sa default na list) ->
         //                   >> d nauupdate yung list
-            public static List<string> likeEmojis = new List<string> { "One Piece", "Naruto", "DragonBall" };
-            public static List<string> heartEmojis = new List<string> { "Kimi Ni Todoke", "Kaguya-sama: Love Is War", "Fruits Basket" };
-            public static List<string> laughEmojis = new List<string> { "Mashle: Magic And Muscles", "Dandadan", "KonoSuba" };
-            public static List<string> wowEmojis = new List<string> { "Solo Leveling", "Frieren: Beyond Journey's End", "Jujutsu Kaisen" };
-            public static List<string> sadEmojis = new List<string> { "A Silent Voice", "Your Lie in April", "Anohana: The Flower We Saw That Day" };
-            public static List<string> angryEmojis = new List<string> { "Attack on Titan", "One Punch Man", "Vinland Saga" };
+            public static List<string> likeEmojis = new List<string> { "ONE PIECE", "NARUTO", "DRAGONBALL" };
+            public static List<string> heartEmojis = new List<string> { "KIMI NI TODOKE", "KAGUYA-SAMA: LOVE IS WAR", "FRUITS BASKET" };
+            public static List<string> laughEmojis = new List<string> { "MASHLE: MAGIC AND MUSCLES", "DANDADAN", "KONOSUBA" };
+            public static List<string> wowEmojis = new List<string> { "SOLO LEVELING", "FRIEREN: BEYOND JOURNEY'S END", "JUJUTSU KAISEN" };
+            public static List<string> sadEmojis = new List<string> { "A SILENT VOICE", "YOUR LIE IN APRIL", "ANOHANA: THE FLOWER WE SAW THAT DAY" };
+            public static List<string> angryEmojis = new List<string> { "ATTACK ON TITAN", "ONE PUNCH MAN", "VINLAND SAGA" };
 
+        
     }
 
     

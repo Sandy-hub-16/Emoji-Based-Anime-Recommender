@@ -96,7 +96,7 @@ namespace Emoji_Based_Anime_Recommender
             }
         }
 
-        public static void DisplayAnimeSeriesList(string emojiType, List<string> animeList) // static >> no need to instantiate
+        public void DisplayAnimeSeriesList(string emojiType, List<string> animeList) // static >> no need to instantiate
         {
             Console.WriteLine($"Anime Recommendation : {emojiType} EMOJI");
 
