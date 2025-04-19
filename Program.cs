@@ -34,7 +34,7 @@ namespace Emoji_Based_Anime_Recommender
 
                     confirmIdentity = User.GetInput("Choose Identity : ");
 
-                if (confirmIdentity.Equals("1") || confirmIdentity == "admin")
+                if (confirmIdentity.Equals("1") || confirmIdentity == "ADMIN")
                 {
                     Admin admin = new Admin();
                     admin.ShowAdminMenu();
@@ -47,7 +47,7 @@ namespace Emoji_Based_Anime_Recommender
                     user.RunAsUser();
                 
                 }
-                else if (confirmIdentity.Equals("x") || confirmIdentity == "exit")
+                else if (confirmIdentity.Equals("X") || confirmIdentity == "exit")
                 {
                     Console.WriteLine("Bye, Mr./Miss Unknown!");
                     Environment.Exit(0);

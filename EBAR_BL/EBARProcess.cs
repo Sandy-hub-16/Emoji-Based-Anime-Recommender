@@ -23,20 +23,22 @@ namespace EBAR_BL
         {
             switch (emoji)
             {
-                case "a": return EmojiList.likeEmojis;
-                case "b": return EmojiList.heartEmojis;
-                case "c": return EmojiList.laughEmojis;
-                case "d": return EmojiList.wowEmojis;
-                case "e": return EmojiList.sadEmojis;
-                case "f": return EmojiList.angryEmojis;
+                case "A": return EmojiList.likeEmojis;
+                case "B": return EmojiList.heartEmojis;
+                case "C": return EmojiList.laughEmojis;
+                case "D": return EmojiList.wowEmojis;
+                case "E": return EmojiList.sadEmojis;
+                case "F": return EmojiList.angryEmojis;
                 default: return null;
+                   
+                    
             }
         }
 
 
     
 
-    public string GetRandomAnimeFromAllEmojis() //only get one random anime (temporary); still working on this
+    public string GetRandomAnimeFromAllEmojis() 
         {
      
             List<string> allAnime = new List<string>();

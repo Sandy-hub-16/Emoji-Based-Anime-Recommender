@@ -27,7 +27,7 @@ namespace Emoji_Based_Anime_Recommender
                 }
                 string adminInput = User.GetInput("Choose Options : ");
 
-                if (adminInput.Equals("1") || adminInput == "add")
+                if (adminInput.Equals("1") || adminInput == "ADD")
                 {
                     Console.WriteLine("SELECT EMOJI to ADD on the list : ");
                     User.DisplayEmoji();
@@ -38,7 +38,7 @@ namespace Emoji_Based_Anime_Recommender
                
                 }
 
-                else if (adminInput.Equals("2") || adminInput == "delete")
+                else if (adminInput.Equals("2") || adminInput == "DELETE")
                 {
                     Console.WriteLine("SELECT EMOJI to DELETE on the list: ");
                     User.DisplayEmoji();
@@ -47,21 +47,35 @@ namespace Emoji_Based_Anime_Recommender
 
                     SelectedEmojiToRemove();
 
-                    break;
+                    
                 }
-                else if (adminInput.Equals("3") || adminInput == "view anime list")
+                else if (adminInput.Equals("3") || adminInput == "VIEW ANIME LIST")
                 {
-                    //UpdatedAnimeList();
+                    User user = new User();
+                    Console.WriteLine("SELECT EMOJI to VIEW : ");
+                    User.DisplayEmoji();
+                    string input = User.GetInput("SELECT : ");
+                    while (true)
+                    {
+                        if (input.Equals("A")) user.DisplayAnimeSeriesList("Like", EmojiList.likeEmojis);
+                        else if (input.Equals("B")) user.DisplayAnimeSeriesList("Like", EmojiList.heartEmojis);
+                        else if (input.Equals("C")) user.DisplayAnimeSeriesList("Like", EmojiList.laughEmojis);
+                        else if (input.Equals("D")) user.DisplayAnimeSeriesList("Like", EmojiList.wowEmojis);
+                        else if (input.Equals("E")) user.DisplayAnimeSeriesList("Like", EmojiList.sadEmojis);
+                        else if (input.Equals("F")) user.DisplayAnimeSeriesList("Like", EmojiList.angryEmojis);
+                        else if (input.Equals("G")) Console.WriteLine("Random Anime cannot be view...");
+                        else Console.WriteLine("Invalid Input");
+                    }
 
-                    break;
+               
                 }
 
-                else if (adminInput.Equals("h")|| adminInput == "home") 
+                else if (adminInput.Equals("H")|| adminInput == "HOME") 
                 {
                     return; // uses return >> babalik sa MainMenu() or babalik sa previous method na nagcall kay ShowAdminMenu()
 
                 }
-                else if (adminInput == "x" || adminInput == "exit") 
+                else if (adminInput == "X" || adminInput == "EXIT") 
                 {
                     Console.WriteLine("Bye Admin! <3");
                     Environment.Exit(0);
@@ -95,22 +109,22 @@ namespace Emoji_Based_Anime_Recommender
             while (true)
             {
                 string adminInput = User.GetInput("Enter Emoji to Add : ");
-                if (adminInput == "a" || adminInput == "like" || adminInput == "like emoji")
+                if (adminInput == "A" || adminInput == "LIKE" || adminInput == "LIKE EMOJI")
                     AddAnimeToEmojiListInterface(EmojiList.likeEmojis);
 
-                else if (adminInput == "b" || adminInput == "heart" || adminInput == "heart emoji")
+                else if (adminInput == "B" || adminInput == "HEART" || adminInput == "HEART EMOJI")
                     AddAnimeToEmojiListInterface(EmojiList.heartEmojis);
 
-                else if (adminInput == "c" || adminInput == "laugh" || adminInput == "laugh emoji")
+                else if (adminInput == "C" || adminInput == "laugh" || adminInput == "LAUGH EMOJI")
                     AddAnimeToEmojiListInterface(EmojiList.laughEmojis);
 
-                else if (adminInput == "d" || adminInput == "wow" || adminInput == "wow emoji")
+                else if (adminInput == "D" || adminInput == "wow" || adminInput == "WOW EMOJI")
                     AddAnimeToEmojiListInterface(EmojiList.wowEmojis);
 
-                else if (adminInput == "e" || adminInput == "sad" || adminInput == "sad emoji")
+                else if (adminInput == "E" || adminInput == "sad" || adminInput == "SAD EMOJI")
                     AddAnimeToEmojiListInterface(EmojiList.sadEmojis);
 
-                else if (adminInput == "f" || adminInput == "angry" || adminInput == "angry emoji")
+                else if (adminInput == "F" || adminInput == "angry" || adminInput == "ANGRY EMOJI")
                     AddAnimeToEmojiListInterface(EmojiList.angryEmojis);
 
                 else
@@ -120,7 +134,7 @@ namespace Emoji_Based_Anime_Recommender
             
                 string input = User.GetInput("Type [B] to go back to Admin Menu OR Type any key to add another : ");
 
-                if (input == "b" || input == "back")
+                if (input == "B" || input == "BACK")
                 {
                     return;
                 }
@@ -130,8 +144,8 @@ namespace Emoji_Based_Anime_Recommender
         }
         public void AddAnimeToEmojiListInterface(List<string> emojiList)
         {
-            Console.Write("Add Anime : ");
-            string animeAdd = Console.ReadLine().Trim();
+          
+            string animeAdd = User.GetInput("Add Anime : ");
             Console.WriteLine(ValidateAddedAnime(animeAdd, emojiList));
 
         }
@@ -163,22 +177,22 @@ namespace Emoji_Based_Anime_Recommender
                 string adminInput = User.GetInput("Enter Emoji to Delete : ");
 
 
-                if (adminInput == "a" || adminInput == "like" || adminInput == "like emoji")
+                if (adminInput == "A" || adminInput == "LIKE" || adminInput == "LIKE EMOJI")
                     selectedEmojiList = EmojiList.likeEmojis;
 
-                else if (adminInput == "b" || adminInput == "heart" || adminInput == "heart emoji")
+                else if (adminInput == "B" || adminInput == "HEART" || adminInput == "HEART EMOJI")
                     selectedEmojiList = EmojiList.heartEmojis;
 
-                else if (adminInput == "c" || adminInput == "laugh" || adminInput == "laugh emoji")
+                else if (adminInput == "C" || adminInput == "LAUGH" || adminInput == "LAUGH EMOJI")
                     selectedEmojiList = EmojiList.laughEmojis;
 
-                else if (adminInput == "d" || adminInput == "wow" || adminInput == "wow emoji")
+                else if (adminInput == "D" || adminInput == "WOW" || adminInput == "WOW EMOJI")
                     selectedEmojiList = EmojiList.wowEmojis;
 
-                else if (adminInput == "e" || adminInput == "sad" || adminInput == "sad emoji")
+                else if (adminInput == "E" || adminInput == "SAD" || adminInput == "SAD EMOJI")
                     selectedEmojiList = EmojiList.sadEmojis;
 
-                else if (adminInput == "f" || adminInput == "angry" || adminInput == "angry emoji")
+                else if (adminInput == "F" || adminInput == "ANGRY" || adminInput == "ANGRY EMOJI")
                     selectedEmojiList = EmojiList.angryEmojis;
 
                 else
@@ -196,7 +210,7 @@ namespace Emoji_Based_Anime_Recommender
                 RemoveAnimeToEmojiListInterface(selectedEmojiList);
                 string continueOrNotInput = User.GetInput("Type [B] to go back to Admin Menu or type any key to delete another anime : ");
 
-                if (continueOrNotInput == "b")
+                if (continueOrNotInput == "B")
                 {
                     return;
                 }
@@ -212,21 +226,21 @@ namespace Emoji_Based_Anime_Recommender
 
         public string ValidateRemovedAnime(string animeInput, List<string> emojiList)
         {
-            string anime = animeInput.ToUpper().Trim();
-            if (string.IsNullOrEmpty(anime))
+       
+            if (string.IsNullOrEmpty(animeInput))
             {
                 return "Input cannot be empty...";
             }
 
-            else if (!emojiList.Contains(anime))
+            else if (!emojiList.Contains(animeInput))
             {
 
-                return $"Anime : {anime} doesn't exist from the list";
+                return $"Anime : {animeInput} doesn't exist from the list";
             }
 
-            emojiList.Remove(anime);
+            emojiList.Remove(animeInput);
 
-            return $"Anime : {anime} has been removed to the list";
+            return $"Anime : {animeInput} has been removed to the list";
 
 
             
