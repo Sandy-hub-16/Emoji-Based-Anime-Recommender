@@ -20,6 +20,7 @@ namespace Emoji_Based_Anime_Recommender
 
             while (true)
             {
+                Console.WriteLine("----------------------------------");
                 Console.WriteLine("ADMIN MENU :");
                 foreach (var updateList in updateAnimeSeriesList)
                 {
@@ -51,23 +52,11 @@ namespace Emoji_Based_Anime_Recommender
                 }
                 else if (adminInput.Equals("3") || adminInput == "VIEW ANIME LIST")
                 {
-                    User user = new User();
-                    Console.WriteLine("SELECT EMOJI to VIEW : ");
-                    User.DisplayEmoji();
-                    string input = User.GetInput("SELECT : ");
-                    while (true)
-                    {
-                        if (input.Equals("A")) user.DisplayAnimeSeriesList("Like", EmojiList.likeEmojis);
-                        else if (input.Equals("B")) user.DisplayAnimeSeriesList("Like", EmojiList.heartEmojis);
-                        else if (input.Equals("C")) user.DisplayAnimeSeriesList("Like", EmojiList.laughEmojis);
-                        else if (input.Equals("D")) user.DisplayAnimeSeriesList("Like", EmojiList.wowEmojis);
-                        else if (input.Equals("E")) user.DisplayAnimeSeriesList("Like", EmojiList.sadEmojis);
-                        else if (input.Equals("F")) user.DisplayAnimeSeriesList("Like", EmojiList.angryEmojis);
-                        else if (input.Equals("G")) Console.WriteLine("Random Anime cannot be view...");
-                        else Console.WriteLine("Invalid Input");
-                    }
+                    
+                    User adminView = new User();
+                    adminView.ViewEmojiBasedAnimeListInterface();
 
-               
+                
                 }
 
                 else if (adminInput.Equals("H")|| adminInput == "HOME") 
@@ -108,6 +97,7 @@ namespace Emoji_Based_Anime_Recommender
 
             while (true)
             {
+                
                 string adminInput = User.GetInput("Enter Emoji to Add : ");
                 if (adminInput == "A" || adminInput == "LIKE" || adminInput == "LIKE EMOJI")
                     AddAnimeToEmojiListInterface(EmojiList.likeEmojis);
@@ -131,7 +121,7 @@ namespace Emoji_Based_Anime_Recommender
                 {
                     Console.WriteLine("Invalid Input");
                 }
-            
+                Console.WriteLine("----------------------------------");
                 string input = User.GetInput("Type [B] to go back to Admin Menu OR Type any key to add another : ");
 
                 if (input == "B" || input == "BACK")
@@ -144,7 +134,7 @@ namespace Emoji_Based_Anime_Recommender
         }
         public void AddAnimeToEmojiListInterface(List<string> emojiList)
         {
-          
+            Console.WriteLine("----------------------------------");
             string animeAdd = User.GetInput("Add Anime : ");
             Console.WriteLine(ValidateAddedAnime(animeAdd, emojiList));
 
@@ -174,6 +164,7 @@ namespace Emoji_Based_Anime_Recommender
             List<string> selectedEmojiList = null;
             while (true)
             {
+                Console.WriteLine("----------------------------------");
                 string adminInput = User.GetInput("Enter Emoji to Delete : ");
 
 
@@ -200,7 +191,7 @@ namespace Emoji_Based_Anime_Recommender
                     Console.WriteLine("Invalid Input");
                     continue; // skips the next line of codes and go back to the top of the loop -> "Enter Emoji to Remove : "
                 }
-
+                Console.WriteLine("----------------------------------");
                 Console.WriteLine("Current Anime List : ");
                 foreach (var animeList in selectedEmojiList)
                 {
@@ -208,6 +199,7 @@ namespace Emoji_Based_Anime_Recommender
                 }
 
                 RemoveAnimeToEmojiListInterface(selectedEmojiList);
+                Console.WriteLine("----------------------------------");
                 string continueOrNotInput = User.GetInput("Type [B] to go back to Admin Menu or type any key to delete another anime : ");
 
                 if (continueOrNotInput == "B")
@@ -220,6 +212,7 @@ namespace Emoji_Based_Anime_Recommender
 
         public void RemoveAnimeToEmojiListInterface(List<string> selectedEmojiList)
         {
+            Console.WriteLine("----------------------------------");
             string animeRemove = User.GetInput("Delete Anime : ");
             Console.WriteLine(ValidateRemovedAnime(animeRemove, selectedEmojiList));
         }

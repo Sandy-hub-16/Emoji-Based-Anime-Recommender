@@ -29,6 +29,7 @@ namespace Emoji_Based_Anime_Recommender
             
             do
             {
+                Console.WriteLine("----------------------------------");
                 Console.Write("Enter Username : ");
                 userName = Console.ReadLine();
               
@@ -40,21 +41,27 @@ namespace Emoji_Based_Anime_Recommender
 
             Console.WriteLine($"Konnichiwa, {userName}!, How are you feeling today?");
 
+            ViewEmojiBasedAnimeListInterface();
+            
+        }
+
+        public void ViewEmojiBasedAnimeListInterface()
+        {
             DisplayEmoji();
 
 
 
             string userInput = GetInput("Choose Emoji : ");
-            
-            
+
+
 
             while (userInput != "X")
             {
                 List<string> emojiList = eBARProcess.GetEmojiList(userInput);
 
-                
+
                 switch (userInput)
-                {            
+                {
                     case "A":
                         Console.WriteLine("");
                         DisplayAnimeSeriesList("                            \r\n             " +
@@ -218,23 +225,24 @@ namespace Emoji_Based_Anime_Recommender
                         break;
                 }
 
-               
+
 
                 DisplayEmoji();
                 userInput = GetInput("Choose Emoji : ");
             }
 
-         
+
             if (userInput == "X")
             {
-                Console.WriteLine("Goodbye! See you in the next episode!");              
+                Console.WriteLine("Goodbye! See you in the next episode!");
                 Environment.Exit(0);
             }
         }
 
         public void DisplayAnimeSeriesList(string emojiType, List<string> animeList) // static >> no need to instantiate
         {
-            Console.WriteLine($"Anime Recommendation : {emojiType} EMOJI");
+            Console.WriteLine("----------------------------------");
+            Console.WriteLine($"Anime Recommendation : {emojiType}");
 
             foreach (var anime in animeList)
             {
@@ -245,7 +253,7 @@ namespace Emoji_Based_Anime_Recommender
 
         public static void DisplayEmoji()
         {
-
+            Console.WriteLine("----------------------------------");
             Console.WriteLine("Emojis : ");
             foreach (string emoji in emojis)
             {
