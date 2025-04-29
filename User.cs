@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Emoji_Based_Anime_Recommender
 {
+   
     public class User
     {
         static string[] emojis = { "[A]Like",
@@ -23,22 +24,23 @@ namespace Emoji_Based_Anime_Recommender
                             };
 
         EBARProcess eBARProcess = new EBARProcess();
+        List<string> emojiList;
         public void RunAsUser()
         {
             string userName;
             
             do
             {
-                Console.WriteLine("----------------------------------");
-                Console.Write("Enter Username : ");
-                userName = Console.ReadLine();
+                
+                userName = GetInput("Enter Username : ");
               
                 if (eBARProcess.ValidateEmptyUserName(userName))
                 {
                     Console.WriteLine("Username cannot be empty. Please Try Again.");
                 }
-            } while (string.IsNullOrWhiteSpace(userName));
+            } while (eBARProcess.ValidateEmptyUserName(userName));
 
+            Console.Clear();
             Console.WriteLine($"Konnichiwa, {userName}!, How are you feeling today?");
 
             ViewEmojiBasedAnimeListInterface();
@@ -52,18 +54,18 @@ namespace Emoji_Based_Anime_Recommender
 
 
             string userInput = GetInput("Choose Emoji : ");
+            
 
 
 
             while (userInput != "X")
             {
-                List<string> emojiList = eBARProcess.GetEmojiList(userInput);
+                emojiList = eBARProcess.ViewAnimeList(userInput);
 
 
                 switch (userInput)
                 {
                     case "A":
-                        Console.WriteLine("");
                         DisplayAnimeSeriesList("                            \r\n             " +
                                     "HJJI           \r\n             " +
                                     "JJJJI          \r\n             " +
@@ -215,6 +217,7 @@ namespace Emoji_Based_Anime_Recommender
                             "\r\n                                         @@@@                        ", emojiList);
                         break;
                     case "G":
+                        Console.Clear();
                         Console.WriteLine("Random Anime : ");
                         Console.WriteLine(eBARProcess.GetRandomAnimeFromAllEmojis());
                         break;
@@ -225,7 +228,7 @@ namespace Emoji_Based_Anime_Recommender
                         break;
                 }
 
-
+               
 
                 DisplayEmoji();
                 userInput = GetInput("Choose Emoji : ");
@@ -241,13 +244,15 @@ namespace Emoji_Based_Anime_Recommender
 
         public void DisplayAnimeSeriesList(string emojiType, List<string> animeList) // static >> no need to instantiate
         {
-            Console.WriteLine("----------------------------------");
+            Console.Clear();
             Console.WriteLine($"Anime Recommendation : {emojiType}");
 
             foreach (var anime in animeList)
             {
                 Console.WriteLine(anime);
             }
+
+
 
         }
 

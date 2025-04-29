@@ -8,9 +8,9 @@ namespace Emoji_Based_Anime_Recommender
      
         static void Main(string[] args)
         {
-            while (true)
+            while (true) // uses loop -- para sa "return" statement
             {
-                MainMenu();
+                MainMenu(); 
             }
 
         }
@@ -25,7 +25,7 @@ namespace Emoji_Based_Anime_Recommender
             string[] identities = { "[1]Admin", "[2]User","[X]EXIT" };
 
            
-                Console.WriteLine("---------------------------------");
+                Console.Clear();
                 Console.WriteLine("IDENTITY CONFIRMATION");
                 foreach (string identity in identities)
                 {
@@ -33,7 +33,7 @@ namespace Emoji_Based_Anime_Recommender
                 }
 
                     confirmIdentity = User.GetInput("Choose Identity : ");
-
+                    Console.Clear();
                 if (confirmIdentity.Equals("1") || confirmIdentity == "ADMIN")
                 {
                     Admin admin = new Admin();
@@ -41,13 +41,13 @@ namespace Emoji_Based_Anime_Recommender
                  
                 }
 
-                else if (confirmIdentity.Equals("2") || confirmIdentity == "user")
+                else if (confirmIdentity.Equals("2") || confirmIdentity == "USER")
                 {
                     User user = new User();
                     user.RunAsUser();
                 
                 }
-                else if (confirmIdentity.Equals("X") || confirmIdentity == "exit")
+                else if (confirmIdentity.Equals("X") || confirmIdentity == "EXIT")
                 {
                     Console.WriteLine("Bye, Mr./Miss Unknown!");
                     Environment.Exit(0);

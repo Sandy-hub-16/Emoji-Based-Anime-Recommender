@@ -6,19 +6,25 @@ using System.Threading.Tasks;
 
 namespace EBARDataLogic
 {
-    public static class EmojiList
+    public class EmojiList
     {
-        // class made static >> kasi pag iniinstantiate sa ibang class narireset ung list (nabalik sa default na list) ->
-        //                   >> d nauupdate yung list
-            public static List<string> likeEmojis = new List<string> { "ONE PIECE", "NARUTO", "DRAGONBALL" };
-            public static List<string> heartEmojis = new List<string> { "KIMI NI TODOKE", "KAGUYA-SAMA: LOVE IS WAR", "FRUITS BASKET" };
-            public static List<string> laughEmojis = new List<string> { "MASHLE: MAGIC AND MUSCLES", "DANDADAN", "KONOSUBA" };
-            public static List<string> wowEmojis = new List<string> { "SOLO LEVELING", "FRIEREN: BEYOND JOURNEY'S END", "JUJUTSU KAISEN" };
-            public static List<string> sadEmojis = new List<string> { "A SILENT VOICE", "YOUR LIE IN APRIL", "ANOHANA: THE FLOWER WE SAW THAT DAY" };
-            public static List<string> angryEmojis = new List<string> { "ATTACK ON TITAN", "ONE PUNCH MAN", "VINLAND SAGA" };
+        public static List<string> LikeEmoji { get;} = new List<string> { "ONE PIECE", "NARUTO", "DRAGONBALL" };
+        public static List<string> HeartEmoji { get;} = new List<string> { "KIMI NI TODOKE", "KAGUYA-SAMA: LOVE IS WAR", "FRUITS BASKET" };
+        public static List<string> LaughEmoji { get;} = new List<string> { "SOLO LEVELING", "FRIEREN: BEYOND JOURNEY'S END", "JUJUTSU KAISEN" };
+        public static List<string> WowEmoji { get;} = new List<string> { "MASHLE: MAGIC AND MUSCLES", "DANDADAN", "KONOSUBA" };
+        public static List<string> SadEmoji { get;} = new List<string> { "A SILENT VOICE", "YOUR LIE IN APRIL", "ANOHANA: THE FLOWER WE SAW THAT DAY" };
+        public static List<string> AngryEmoji { get;} = new List<string> { "ATTACK ON TITAN", "ONE PUNCH MAN", "VINLAND SAGA" };
 
-        
+       
+
+
+
+
+
+
     }
+        
+}
 
     
-}
+  
