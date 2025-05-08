@@ -49,6 +49,7 @@ namespace Emoji_Based_Anime_Recommender
 
         public void ViewEmojiBasedAnimeListInterface()
         {
+            Console.Clear();
             DisplayEmoji();
 
 

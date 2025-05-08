@@ -23,12 +23,12 @@ namespace EBAR_BL
 
         public bool ValidateDuplicateInput(string animeInput) 
         {
-            if (EmojiList.LikeEmoji.Contains(animeInput)||
-                EmojiList.HeartEmoji.Contains(animeInput) ||
-                EmojiList.LaughEmoji.Contains(animeInput) ||
-                EmojiList.SadEmoji.Contains(animeInput) ||
-                EmojiList.WowEmoji.Contains(animeInput) ||
-                EmojiList.AngryEmoji.Contains(animeInput))
+            if (AnimeList.LikeEmoji.Contains(animeInput)||
+                AnimeList.HeartEmoji.Contains(animeInput) ||
+                AnimeList.LaughEmoji.Contains(animeInput) ||
+                AnimeList.SadEmoji.Contains(animeInput) ||
+                AnimeList.WowEmoji.Contains(animeInput) ||
+                AnimeList.AngryEmoji.Contains(animeInput))
             {
                 return true;
             }
@@ -44,22 +44,22 @@ namespace EBAR_BL
                 switch (emoji)
                 {
                 case "A": 
-                    EmojiList.LikeEmoji.Add(anime); 
+                    AnimeList.LikeEmoji.Add(anime); 
                     break;
                 case "B": 
-                    EmojiList.HeartEmoji.Add(anime); 
+                    AnimeList.HeartEmoji.Add(anime); 
                     break;
                 case "C": 
-                    EmojiList.LaughEmoji.Add(anime); 
+                    AnimeList.LaughEmoji.Add(anime); 
                     break;
                 case "D": 
-                    EmojiList.WowEmoji.Add(anime); 
+                    AnimeList.WowEmoji.Add(anime); 
                     break;
                 case "E": 
-                    EmojiList.SadEmoji.Add(anime); 
+                    AnimeList.SadEmoji.Add(anime); 
                     break;
                 case "F": 
-                    EmojiList.AngryEmoji.Add(anime); 
+                    AnimeList.AngryEmoji.Add(anime); 
                     break;
 
                 default: Console.WriteLine("Invalid Input"); break;
@@ -76,22 +76,22 @@ namespace EBAR_BL
             switch (emoji)
             {
                 case "A":
-                    EmojiList.LikeEmoji.Remove(anime);
+                    AnimeList.LikeEmoji.Remove(anime);
                     break;
                 case "B":
-                    EmojiList.HeartEmoji.Remove(anime);
+                    AnimeList.HeartEmoji.Remove(anime);
                     break;
                 case "C":
-                    EmojiList.LaughEmoji.Remove(anime);
+                    AnimeList.LaughEmoji.Remove(anime);
                     break;
                 case "D":
-                    EmojiList.WowEmoji.Remove(anime);
+                    AnimeList.WowEmoji.Remove(anime);
                     break;
                 case "E":
-                    EmojiList.SadEmoji.Remove(anime);
+                    AnimeList.SadEmoji.Remove(anime);
                     break;
                 case "F":
-                    EmojiList.AngryEmoji.Remove(anime);
+                    AnimeList.AngryEmoji.Remove(anime);
                     break;
                 default:
                     break;
@@ -108,17 +108,17 @@ namespace EBAR_BL
         {
             switch (emoji)
             {
-                case "A": return new List<string>(EmojiList.LikeEmoji);
+                case "A": return new List<string>(AnimeList.LikeEmoji);
                     
-                case "B": return new List<string>(EmojiList.HeartEmoji);
+                case "B": return new List<string>(AnimeList.HeartEmoji);
 
-                case "C": return new List<string>(EmojiList.LaughEmoji);
+                case "C": return new List<string>(AnimeList.LaughEmoji);
 
-                case "D": return new List<string>(EmojiList.WowEmoji);
+                case "D": return new List<string>(AnimeList.WowEmoji);
 
-                case "E": return new List<string>(EmojiList.SadEmoji);
+                case "E": return new List<string>(AnimeList.SadEmoji);
 
-                case "F": return new List<string>(EmojiList.AngryEmoji);
+                case "F": return new List<string>(AnimeList.AngryEmoji);
 
                 default: return new List<string>();
                    
@@ -135,12 +135,12 @@ namespace EBAR_BL
         {
 
             List<string> allAnime = new List<string>();
-            allAnime.AddRange(EmojiList.LikeEmoji);
-            allAnime.AddRange(EmojiList.HeartEmoji);
-            allAnime.AddRange(EmojiList.LaughEmoji);
-            allAnime.AddRange(EmojiList.WowEmoji);
-            allAnime.AddRange(EmojiList.SadEmoji);
-            allAnime.AddRange(EmojiList.AngryEmoji);
+            allAnime.AddRange(AnimeList.LikeEmoji);
+            allAnime.AddRange(AnimeList.HeartEmoji);
+            allAnime.AddRange(AnimeList.LaughEmoji);
+            allAnime.AddRange(AnimeList.WowEmoji);
+            allAnime.AddRange(AnimeList.SadEmoji);
+            allAnime.AddRange(AnimeList.AngryEmoji);
 
             Random randomAnime = new Random();
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EBARDataLogic
 {
-    public class EmojiList
+    public class AnimeList
     {
         public static List<string> LikeEmoji { get;} = new List<string> { "ONE PIECE", "NARUTO", "DRAGONBALL" };
         public static List<string> HeartEmoji { get;} = new List<string> { "KIMI NI TODOKE", "KAGUYA-SAMA: LOVE IS WAR", "FRUITS BASKET" };

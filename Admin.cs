@@ -15,7 +15,7 @@ namespace Emoji_Based_Anime_Recommender
         EBARProcess eBARProcess = new EBARProcess();
         public void ShowAdminMenu()
         {
-            string[] menuOptions = {"[1]Add", "[2]Delete", "[3]View Anime List", "[H]HOME","[X]EXIT"};
+            string[] menuOptions = {"[1]Add", "[2]Delete", "[3]View Anime List", "[4]HOME","[5]EXIT"};
             string adminInput;
             string emojiInput;
             string animeInput;
@@ -23,7 +23,7 @@ namespace Emoji_Based_Anime_Recommender
 
             while (true)
             {
-                Console.WriteLine("----------------------------------");
+                Console.Clear();
                 Console.WriteLine("ADMIN MENU :");
                 foreach (var menu in menuOptions)
                 {
@@ -31,91 +31,94 @@ namespace Emoji_Based_Anime_Recommender
                 }
                 adminInput = User.GetInput("Choose Options : "); ;
 
-                if (adminInput.Equals("1") || adminInput == "ADD")
+                if (int.TryParse(adminInput, out int choice))
                 {
-                    Console.Clear();
-                    Console.WriteLine("--ADD MENU--");
-                    User.DisplayEmoji();
-                    emojiInput = User.GetInput("SELECT EMOJI :");
-                    
-
-                  
-                    do
+                    if (choice == (int)AdminActions.Add)
                     {
-                        
-                        animeInput = User.GetInput("Add : ");
+                        Console.Clear();
+                        Console.WriteLine("--ADD MENU--");
+                        User.DisplayEmoji();
+                        emojiInput = User.GetInput("SELECT EMOJI :");
 
-                        if (eBARProcess.ValidateDuplicateInput(animeInput))
+
+
+                        do
                         {
-                            Console.WriteLine($"{animeInput} already added..");
-                        }
-    
-                    } while (eBARProcess.ValidateDuplicateInput(animeInput));
 
-                    eBARProcess.AddAnimeBasedOnEmoji(emojiInput, animeInput);
-                    Console.WriteLine($"{animeInput} added on the list...");
-                    Console.WriteLine("Going back to Admin Menu...");
-                    Thread.Sleep(1000);
-                    Console.Clear();
-                    
+                            animeInput = User.GetInput("Add : ");
+
+                            if (eBARProcess.ValidateDuplicateInput(animeInput))
+                            {
+                                Console.WriteLine($"{animeInput} already added..");
+                            }
+
+                        } while (eBARProcess.ValidateDuplicateInput(animeInput));
+
+                        eBARProcess.AddAnimeBasedOnEmoji(emojiInput, animeInput);
+                        Console.WriteLine($"{animeInput} added on the list...");
+                        Console.WriteLine("Going back to Admin Menu...");
+                        Thread.Sleep(1000);
+                        Console.Clear();
 
 
-                }
 
-                else if (adminInput.Equals("2") || adminInput == "REMOVE")
-                {
-                    Console.Clear();
-                    Console.WriteLine("--REMOVE MENU--");
-                    User.DisplayEmoji();
+                    }
 
-                    emojiInput = User.GetInput("SELECT EMOJI :");
-                  
-                    do
+                    else if (choice == (int)AdminActions.Delete)
                     {
-                        animeInput = User.GetInput("Remove : ");
+                        Console.Clear();
+                        Console.WriteLine("--REMOVE MENU--");
+                        User.DisplayEmoji();
 
-                        if (!eBARProcess.ValidateDuplicateInput(animeInput))
+                        emojiInput = User.GetInput("SELECT EMOJI :");
+
+                        do
                         {
-                            Console.WriteLine($"{animeInput} doesn't exist from the selected list..");
-                        }
-                    } while (!eBARProcess.ValidateDuplicateInput(animeInput));
+                            animeInput = User.GetInput("Remove : ");
 
-                    eBARProcess.RemoveAnimeBasedOnEmoji(emojiInput, animeInput);
-                    Console.WriteLine($"{animeInput} removed on the list...");
-                    Console.WriteLine("Going back to Admin Menu...");
-                    Thread.Sleep(1000);
-                    Console.Clear();
-                    
+                            if (!eBARProcess.ValidateDuplicateInput(animeInput))
+                            {
+                                Console.WriteLine($"{animeInput} doesn't exist from the selected list..");
+                            }
+                        } while (!eBARProcess.ValidateDuplicateInput(animeInput));
+
+                        eBARProcess.RemoveAnimeBasedOnEmoji(emojiInput, animeInput);
+                        Console.WriteLine($"{animeInput} removed on the list...");
+                        Console.WriteLine("Going back to Admin Menu...");
+                        Thread.Sleep(1000);
+                        Console.Clear();
 
 
-                }
-                else if (adminInput.Equals("3") || adminInput == "VIEW ANIME LIST")
-                {
-                    
-                    User adminView = new User();
-                    adminView.ViewEmojiBasedAnimeListInterface();
 
-                
-                }
+                    }
+                    else if (choice ==  (int)AdminActions.ViewAnimeList)
+                    {
 
-                else if (adminInput.Equals("H")|| adminInput == "HOME") 
-                {
-                    return; // uses return >> babalik sa MainMenu() or babalik sa previous method na nagcall kay ShowAdminMenu()
+                        User adminView = new User();
+                        adminView.ViewEmojiBasedAnimeListInterface();
 
-                }
-                else if (adminInput == "X" || adminInput == "EXIT") 
-                {
-                    Console.WriteLine("Bye Admin! <3");
-                    Environment.Exit(0);
-                    
-                }
-                else if (string.IsNullOrWhiteSpace(adminInput))
-                {
-                    Console.WriteLine("Input cannot be empty");
-                }
-                else
-                {
-                    Console.WriteLine("Enter existing choices only");
+
+                    }
+
+                    else if (choice == (int)AdminActions.Home)
+                    {
+                        return; // uses return >> babalik sa MainMenu() or babalik sa previous method na nagcall kay ShowAdminMenu()
+
+                    }
+                    else if (choice == (int)AdminActions.Exit)
+                    {
+                        Console.WriteLine("Bye Admin! <3");
+                        Environment.Exit(0);
+
+                    }
+                    else if (string.IsNullOrWhiteSpace(adminInput))
+                    {
+                        Console.WriteLine("Input cannot be empty");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Enter existing choices only");
+                    }
                 }
             }
 
