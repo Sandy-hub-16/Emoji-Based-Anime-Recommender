@@ -49,7 +49,7 @@ namespace Emoji_Based_Anime_Recommender
 
         public void ViewEmojiBasedAnimeListInterface()
         {
-            Console.Clear();
+           
             DisplayEmoji();
 
 
@@ -225,7 +225,8 @@ namespace Emoji_Based_Anime_Recommender
                     case "H":
                         return; // return to MainMenu() or the previous method na nagcall kay RunAsUser();
                     default:
-                        Console.WriteLine("Please enter the existing letters only");
+                        Console.Clear();
+                        Console.WriteLine("WARNING : Please enter the existing letters only");
                         break;
                 }
 

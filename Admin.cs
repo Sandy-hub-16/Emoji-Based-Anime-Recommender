@@ -93,7 +93,7 @@ namespace Emoji_Based_Anime_Recommender
                     }
                     else if (choice ==  (int)AdminActions.ViewAnimeList)
                     {
-
+                        Console.Clear();
                         User adminView = new User();
                         adminView.ViewEmojiBasedAnimeListInterface();
 
@@ -109,6 +109,7 @@ namespace Emoji_Based_Anime_Recommender
                     {
                         Console.WriteLine("Bye Admin! <3");
                         Environment.Exit(0);
+                        Thread.Sleep(1000);
 
                     }
                     else if (string.IsNullOrWhiteSpace(adminInput))
