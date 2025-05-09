@@ -8,7 +8,7 @@ namespace EBARDataLogic
 {
     public class AnimeList
     {
-        public static List<string> LikeEmoji { get;} = new List<string> { "ONE PIECE", "NARUTO", "DRAGONBALL" };
+        public static List<string> LikeEmoji { get;} = new List<string> { "NARUTO", "ONE PIECE", "DRAGONBALL" };
         public static List<string> HeartEmoji { get;} = new List<string> { "KIMI NI TODOKE", "KAGUYA-SAMA: LOVE IS WAR", "FRUITS BASKET" };
         public static List<string> LaughEmoji { get;} = new List<string> { "SOLO LEVELING", "FRIEREN: BEYOND JOURNEY'S END", "JUJUTSU KAISEN" };
         public static List<string> WowEmoji { get;} = new List<string> { "MASHLE: MAGIC AND MUSCLES", "DANDADAN", "KONOSUBA" };

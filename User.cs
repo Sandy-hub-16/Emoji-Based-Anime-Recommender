@@ -247,9 +247,15 @@ namespace Emoji_Based_Anime_Recommender
         public void DisplayAnimeSeriesList(string emojiType, List<string> animeList) // static >> no need to instantiate
         {
             Console.Clear();
+            // practice LINQ :>
+            var arrangeAlphabetically = from animes in animeList // foreach (var animes in animeList)
+                                        where animes.Length > 0 // if animes.length > 0
+                                        orderby animes ascending // sort/arrange animes from lowest to highest (a-z) 
+                                        select $"{animes}"; // select == add
+
             Console.WriteLine($"Anime Recommendation : {emojiType}");
 
-            foreach (var anime in animeList)
+            foreach (var anime in arrangeAlphabetically)
             {
                 Console.WriteLine(anime);
             }
