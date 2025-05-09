@@ -68,6 +68,9 @@ namespace Emoji_Based_Anime_Recommender
                     {
                         Console.Clear();
                         Console.WriteLine("--REMOVE MENU--");
+                        User.emojis.Remove("[G]RANDOM");
+                        User.emojis.Remove("\n[H] HOME");
+                        User.emojis.Remove("\n[X] EXIT");
                         User.DisplayEmoji();
 
                         emojiInput = User.GetInput("SELECT EMOJI :");
@@ -89,7 +92,6 @@ namespace Emoji_Based_Anime_Recommender
                         Console.Clear();
 
 
-
                     }
                     else if (choice ==  (int)AdminActions.ViewAnimeList)
                     {
@@ -109,17 +111,9 @@ namespace Emoji_Based_Anime_Recommender
                     {
                         Console.WriteLine("Bye Admin! <3");
                         Environment.Exit(0);
-                        Thread.Sleep(1000);
 
                     }
-                    else if (string.IsNullOrWhiteSpace(adminInput))
-                    {
-                        Console.WriteLine("Input cannot be empty");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Enter existing choices only");
-                    }
+                  
                 }
             }
 

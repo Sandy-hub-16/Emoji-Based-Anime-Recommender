@@ -12,7 +12,7 @@ namespace EBAR_BL
     public class EBARProcess
     {
 
-        public bool ValidateEmptyUserName(string userName)
+        public bool ValidateEmptyInput(string userName)
         {
             if (string.IsNullOrWhiteSpace(userName))
             {

@@ -11,17 +11,17 @@ namespace Emoji_Based_Anime_Recommender
    
     public class User
     {
-        static string[] emojis = { "[A]Like",
-                                   "[B]Heart",
-                                   "[C]Laugh",
-                                   "[D]Wow",
-                                   "[E]Sad",
-                                   "[F]Angry",
-                                   "[G]RANDOM",
-                                  
-                                "\n[H] HOME",
-                                "\n[X] EXIT"
-                            };
+        public static List<string> emojis = new List<string> {  "[A]Like",
+                                                                "[B]Heart",
+                                                                "[C]Laugh",
+                                                                "[D]Wow",
+                                                                "[E]Sad",
+                                                                "[F]Angry",
+                                                                "[G]RANDOM",
+
+                                                                "\n[H] HOME",
+                                                                "\n[X] EXIT"
+                                                                };
 
         EBARProcess eBARProcess = new EBARProcess();
         List<string> emojiList;
@@ -34,11 +34,11 @@ namespace Emoji_Based_Anime_Recommender
                 
                 userName = GetInput("Enter Username : ");
               
-                if (eBARProcess.ValidateEmptyUserName(userName))
+                if (eBARProcess.ValidateEmptyInput(userName))
                 {
                     Console.WriteLine("Username cannot be empty. Please Try Again.");
                 }
-            } while (eBARProcess.ValidateEmptyUserName(userName));
+            } while (eBARProcess.ValidateEmptyInput(userName));
 
             Console.Clear();
             Console.WriteLine($"Konnichiwa, {userName}!, How are you feeling today?");
@@ -273,6 +273,7 @@ namespace Emoji_Based_Anime_Recommender
                 Console.WriteLine(emoji);
             }
         }
+        
 
         public static string GetInput(string typeofInput)
         {
