@@ -9,10 +9,14 @@ using System.Xml.Linq;
 
 namespace Emoji_Based_Anime_Recommender
 {
-    public class Admin 
+    // Inheritance => ":" also means "extends" in java(":" == inherits), EBARProcess => Parent
+    // Admin class can now use the methods in EBARProcess class without instantiating
+
+    // *for practice purpose*
+    public class Admin : EBARProcess  
     {
 
-        EBARProcess eBARProcess = new EBARProcess();
+       
         public void ShowAdminMenu()
         {
             string[] menuOptions = {"[1]Add", "[2]Delete", "[3]View Anime List", "[4]HOME","[5]EXIT"};
@@ -47,14 +51,15 @@ namespace Emoji_Based_Anime_Recommender
 
                             animeInput = User.GetInput("Add : ");
 
-                            if (eBARProcess.ValidateDuplicateInput(animeInput))
+                            if (ValidateDuplicateInput(animeInput))
                             {
                                 Console.WriteLine($"{animeInput} already added..");
                             }
 
-                        } while (eBARProcess.ValidateDuplicateInput(animeInput));
+                        } while (ValidateDuplicateInput(animeInput));
 
-                        eBARProcess.AddAnimeBasedOnEmoji(emojiInput, animeInput);
+                        AddAnimeBasedOnEmoji(emojiInput, animeInput);
+
                         Console.WriteLine($"{animeInput} added on the list...");
                         Console.WriteLine("Going back to Admin Menu...");
                         Thread.Sleep(1000);
@@ -79,13 +84,14 @@ namespace Emoji_Based_Anime_Recommender
                         {
                             animeInput = User.GetInput("Remove : ");
 
-                            if (!eBARProcess.ValidateDuplicateInput(animeInput))
+                            if (!ValidateDuplicateInput(animeInput))
                             {
                                 Console.WriteLine($"{animeInput} doesn't exist from the selected list..");
                             }
-                        } while (!eBARProcess.ValidateDuplicateInput(animeInput));
+                        } while (!ValidateDuplicateInput(animeInput));
 
-                        eBARProcess.RemoveAnimeBasedOnEmoji(emojiInput, animeInput);
+                        RemoveAnimeBasedOnEmoji(emojiInput, animeInput);
+
                         Console.WriteLine($"{animeInput} removed on the list...");
                         Console.WriteLine("Going back to Admin Menu...");
                         Thread.Sleep(1000);
