@@ -9,7 +9,7 @@ using System.Xml.Linq;
 
 namespace EBAR_BL
 {
-    public class EBARProcess
+    public class EBARProcess : AnimeList
     {
 
         public bool ValidateEmptyInput(string userName)
@@ -144,7 +144,7 @@ namespace EBAR_BL
 
             Random randomAnime = new Random();
 
-            int anime = randomAnime.Next(allAnime.Count); // get I random anime from allAnime list
+            int anime = randomAnime.Next(allAnime.Count); // get 1 random anime from allAnime list
             return allAnime[anime];
         }
 

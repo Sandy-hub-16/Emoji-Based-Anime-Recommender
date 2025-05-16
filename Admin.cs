@@ -23,7 +23,7 @@ namespace Emoji_Based_Anime_Recommender
             string adminInput;
             string emojiInput;
             string animeInput;
-
+            
 
             while (true)
             {
@@ -110,6 +110,8 @@ namespace Emoji_Based_Anime_Recommender
 
                     else if (choice == (int)AdminActions.Home)
                     {
+                        Console.Write("Returning to Main Menu...");
+                        Thread.Sleep(1000);
                         return; // uses return >> babalik sa MainMenu() or babalik sa previous method na nagcall kay ShowAdminMenu()
 
                     }
@@ -121,6 +123,7 @@ namespace Emoji_Based_Anime_Recommender
                     }
                   
                 }
+          
             }
 
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Emoji_Based_Anime_Recommender
 {
    
-    public class User
+    public class User 
     {
         public static List<string> emojis = new List<string> {  "[A]Like",
                                                                 "[B]Heart",
@@ -223,6 +223,8 @@ namespace Emoji_Based_Anime_Recommender
                         Console.WriteLine(eBARProcess.GetRandomAnimeFromAllEmojis());
                         break;
                     case "H":
+                        Console.Write("Returning to Main Menu....");
+                        Thread.Sleep(1000);
                         return; // return to MainMenu() or the previous method na nagcall kay RunAsUser();
                     default:
                         Console.Clear();

@@ -18,15 +18,16 @@ namespace Emoji_Based_Anime_Recommender
        
         public static void MainMenu()
         {
-            Console.WriteLine("Emoji-based Anime Series Recommendation");
+            
 
             string confirmIdentity;
 
             string[] identities = { "[1]Admin", "[2]User","[X]EXIT" };
 
-           
-                Console.Clear();
-                Console.WriteLine("IDENTITY CONFIRMATION");
+            Console.Clear();
+            Console.WriteLine("Emoji-based Anime Series Recommendation");
+            Console.WriteLine();
+            Console.WriteLine("IDENTITY CONFIRMATION");
                 foreach (string identity in identities)
                 {
                     Console.WriteLine(identity);
@@ -36,10 +37,16 @@ namespace Emoji_Based_Anime_Recommender
                     Console.Clear();
                 if (confirmIdentity.Equals("1") || confirmIdentity == "ADMIN")
                 {
+                    string userNameConfirmation = User.GetInput("Enter Username : ");
+                    string passwordConfirmation = User.GetInput("Enter password : ");
+
+                    if (userNameConfirmation.Equals("SANDY") && passwordConfirmation.Equals("12345"))
+                    {
                     Admin admin = new Admin();
-                    admin.ShowAdminMenu();
-                 
-                }
+                    admin.ShowAdminMenu();                 
+                    }
+ 
+            }
 
                 else if (confirmIdentity.Equals("2") || confirmIdentity == "USER")
                 {
