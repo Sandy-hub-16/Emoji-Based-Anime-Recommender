@@ -24,6 +24,7 @@ namespace Emoji_Based_Anime_Recommender
                                                                 };
 
         EBARProcess eBARProcess = new EBARProcess();
+        AnimeListDataService animeListDataService = new AnimeListDataService();
         List<string> emojiList;
         public void RunAsUser()
         {
@@ -61,7 +62,7 @@ namespace Emoji_Based_Anime_Recommender
 
             while (userInput != "X")
             {
-                emojiList = eBARProcess.ViewAnimeList(userInput);
+                emojiList = animeListDataService.ViewAnimeList(userInput);
 
 
                 switch (userInput)
@@ -220,7 +221,7 @@ namespace Emoji_Based_Anime_Recommender
                     case "G":
                         Console.Clear();
                         Console.WriteLine("Random Anime : ");
-                        Console.WriteLine(eBARProcess.GetRandomAnimeFromAllEmojis());
+                        Console.WriteLine(animeListDataService.GetRandomAnimeFromAllEmojis());
                         break;
                     case "H":
                         Console.Write("Returning to Main Menu....");

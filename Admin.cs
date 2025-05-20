@@ -15,8 +15,8 @@ namespace Emoji_Based_Anime_Recommender
     // *for practice purpose*
     public class Admin : EBARProcess  
     {
+        AnimeListDataService animeListDataService = new AnimeListDataService();
 
-       
         public void ShowAdminMenu()
         {
             string[] menuOptions = {"[1]Add", "[2]Delete", "[3]View Anime List", "[4]HOME","[5]EXIT"};
@@ -46,19 +46,11 @@ namespace Emoji_Based_Anime_Recommender
 
 
 
-                        do
-                        {
 
-                            animeInput = User.GetInput("Add : ");
+                        animeInput = User.GetInput("Add : ");
 
-                            if (ValidateDuplicateInput(animeInput))
-                            {
-                                Console.WriteLine($"{animeInput} already added..");
-                            }
 
-                        } while (ValidateDuplicateInput(animeInput));
-
-                        AddAnimeBasedOnEmoji(emojiInput, animeInput);
+                        animeListDataService.AddAnimeBasedOnEmoji(emojiInput, animeInput);
 
                         Console.WriteLine($"{animeInput} added on the list...");
                         Console.WriteLine("Going back to Admin Menu...");
@@ -80,17 +72,10 @@ namespace Emoji_Based_Anime_Recommender
 
                         emojiInput = User.GetInput("SELECT EMOJI :");
 
-                        do
-                        {
-                            animeInput = User.GetInput("Remove : ");
+                      
+                        animeInput = User.GetInput("Remove : ");
 
-                            if (!ValidateDuplicateInput(animeInput))
-                            {
-                                Console.WriteLine($"{animeInput} doesn't exist from the selected list..");
-                            }
-                        } while (!ValidateDuplicateInput(animeInput));
-
-                        RemoveAnimeBasedOnEmoji(emojiInput, animeInput);
+                        animeListDataService.RemoveAnimeBasedOnEmoji(emojiInput, animeInput);
 
                         Console.WriteLine($"{animeInput} removed on the list...");
                         Console.WriteLine("Going back to Admin Menu...");
@@ -110,9 +95,9 @@ namespace Emoji_Based_Anime_Recommender
 
                     else if (choice == (int)AdminActions.Home)
                     {
-                        Console.Write("Returning to Main Menu...");
+                        Console.Write("Returning to Admin Menu...");
                         Thread.Sleep(1000);
-                        return; // uses return >> babalik sa MainMenu() or babalik sa previous method na nagcall kay ShowAdminMenu()
+                        return; // uses return >> babalik sa AdminMenu() or babalik sa previous method na nagcall kay ShowAdminMenu()
 
                     }
                     else if (choice == (int)AdminActions.Exit)
