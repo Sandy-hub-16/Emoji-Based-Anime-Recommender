@@ -15,7 +15,8 @@ namespace EBARDataLogic
         {
             //animeListDataService = new InMemoryDataService();
             //animeListDataService = new TextFileDataService();
-            animeListDataService = new JsonFileDataService();
+            //animeListDataService = new JsonFileDataService();
+            animeListDataService = new DBDataService();
         }
         public void AddAnimeBasedOnEmoji(string emoji, string anime)
         {
