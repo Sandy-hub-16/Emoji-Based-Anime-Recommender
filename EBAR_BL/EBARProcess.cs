@@ -22,6 +22,16 @@ namespace EBAR_BL
             return false;
         }
 
+        public bool CheckReturntoMenu(string input)
+        {
+            if (input == "H")
+            {
+                Thread.Sleep(1000);
+                return true;
+            }
+            return false;
+        }
+
 
     }
 }

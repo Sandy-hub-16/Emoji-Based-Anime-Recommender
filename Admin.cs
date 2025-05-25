@@ -40,11 +40,17 @@ namespace Emoji_Based_Anime_Recommender
                     if (choice == (int)AdminActions.Add)
                     {
                         Console.Clear();
+                        User.emojis.Remove("[G]RANDOM");
+                      
                         Console.WriteLine("--ADD MENU--");
                         User.DisplayEmoji();
                         emojiInput = User.GetInput("SELECT EMOJI :");
 
-
+                        if (CheckReturntoMenu(emojiInput))
+                        {
+                            Console.WriteLine("Returning to Main Menu");
+                            return;
+                        }
 
 
                         animeInput = User.GetInput("Add : ");
@@ -66,13 +72,18 @@ namespace Emoji_Based_Anime_Recommender
                         Console.Clear();
                         Console.WriteLine("--REMOVE MENU--");
                         User.emojis.Remove("[G]RANDOM");
-                        User.emojis.Remove("\n[H] HOME");
-                        User.emojis.Remove("\n[X] EXIT");
+           
                         User.DisplayEmoji();
 
                         emojiInput = User.GetInput("SELECT EMOJI :");
 
-                      
+                        if (CheckReturntoMenu(emojiInput))
+                        {
+                            Console.WriteLine("Returning to Main Menu");
+                            return;
+                        }
+
+
                         animeInput = User.GetInput("Remove : ");
 
                         animeListDataService.RemoveAnimeBasedOnEmoji(emojiInput, animeInput);

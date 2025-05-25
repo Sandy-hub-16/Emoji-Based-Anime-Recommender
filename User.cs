@@ -62,7 +62,11 @@ namespace Emoji_Based_Anime_Recommender
 
             while (userInput != "X")
             {
-                emojiList = animeListDataService.ViewAnimeList(userInput);
+                if(userInput is "A" or "B" or "C" or "D" or "E" or "F")
+                {
+                    emojiList = animeListDataService.ViewAnimeList(userInput);
+                }
+                
 
 
                 switch (userInput)
