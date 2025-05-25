@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EBAR_BL", "EBAR_BL\EBAR_BL.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBARDataLogic", "EBARDataLogic\EBARDataLogic.csproj", "{1BFB8EB7-F2B2-4596-9B83-1CAC12BFDA15}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBARCommon", "..\EBARCommon\EBARCommon.csproj", "{12ABD23C-4558-4DC4-A867-719F4280094D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBARCommon", "EBARCommon\EBARCommon.csproj", "{D7428916-DCCB-4F86-B638-33B1F784DC29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{1BFB8EB7-F2B2-4596-9B83-1CAC12BFDA15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BFB8EB7-F2B2-4596-9B83-1CAC12BFDA15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BFB8EB7-F2B2-4596-9B83-1CAC12BFDA15}.Release|Any CPU.Build.0 = Release|Any CPU
-		{12ABD23C-4558-4DC4-A867-719F4280094D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{12ABD23C-4558-4DC4-A867-719F4280094D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{12ABD23C-4558-4DC4-A867-719F4280094D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{12ABD23C-4558-4DC4-A867-719F4280094D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7428916-DCCB-4F86-B638-33B1F784DC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7428916-DCCB-4F86-B638-33B1F784DC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7428916-DCCB-4F86-B638-33B1F784DC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7428916-DCCB-4F86-B638-33B1F784DC29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

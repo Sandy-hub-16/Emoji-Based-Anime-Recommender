@@ -9,12 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="EBARCommon\**" />
     <Compile Remove="EBARDataLogic\**" />
     <Compile Remove="EBAR_BL\**" />
     <Compile Remove="EBAR_Desktop\**" />
+    <EmbeddedResource Remove="EBARCommon\**" />
     <EmbeddedResource Remove="EBARDataLogic\**" />
     <EmbeddedResource Remove="EBAR_BL\**" />
     <EmbeddedResource Remove="EBAR_Desktop\**" />
+    <None Remove="EBARCommon\**" />
     <None Remove="EBARDataLogic\**" />
     <None Remove="EBAR_BL\**" />
     <None Remove="EBAR_Desktop\**" />

@@ -22,7 +22,7 @@ namespace EBAR_Desktop
             var username = txtUsername.Text;
             var password = txtPassword.Text;
 
-            if (username.Equals("SANDY") && password.Equals("12345"))
+            if (username.Equals("sandy") && password.Equals("12345"))
             {
                 MessageBox.Show("Login Successfully..");
             }
