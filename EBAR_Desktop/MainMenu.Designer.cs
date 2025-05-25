@@ -37,7 +37,9 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Franklin Gothic Medium", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(194, 26);
             label1.Name = "label1";
             label1.Size = new Size(449, 54);
@@ -46,6 +48,7 @@
             // 
             // btnAdmin
             // 
+            btnAdmin.Cursor = Cursors.Hand;
             btnAdmin.Font = new Font("Franklin Gothic Medium", 9F);
             btnAdmin.Location = new Point(356, 118);
             btnAdmin.Name = "btnAdmin";
@@ -57,6 +60,7 @@
             // 
             // btnUser
             // 
+            btnUser.Cursor = Cursors.Hand;
             btnUser.Font = new Font("Franklin Gothic Medium", 9F);
             btnUser.Location = new Point(356, 190);
             btnUser.Name = "btnUser";
@@ -77,16 +81,20 @@
             btnExit.TabIndex = 3;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnExit_Click;
             // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.background;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
             Controls.Add(btnExit);
             Controls.Add(btnUser);
             Controls.Add(btnAdmin);
             Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "MainMenu";
             Text = "Main Menu";
             ResumeLayout(false);
