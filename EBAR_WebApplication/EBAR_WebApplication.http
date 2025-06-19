@@ -1,0 +1,6 @@
+@EBAR_WebApplication_HostAddress = http://localhost:5224
+
+GET {{EBAR_WebApplication_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

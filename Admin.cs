@@ -79,7 +79,7 @@ namespace Emoji_Based_Anime_Recommender
 
                         if (CheckReturntoMenu(emojiInput))
                         {
-                            Console.WriteLine("Returning to Main Menu");
+                            Console.WriteLine("Returning to Previous Menu...");
                             return;
                         }
 
@@ -106,7 +106,7 @@ namespace Emoji_Based_Anime_Recommender
 
                     else if (choice == (int)AdminActions.Home)
                     {
-                        Console.Write("Returning to Admin Menu...");
+                        Console.Write("Returning to Previous Menu...");
                         Thread.Sleep(1000);
                         return; // uses return >> babalik sa AdminMenu() or babalik sa previous method na nagcall kay ShowAdminMenu()
 

@@ -13,14 +13,17 @@
     <Compile Remove="EBARDataLogic\**" />
     <Compile Remove="EBAR_BL\**" />
     <Compile Remove="EBAR_Desktop\**" />
+    <Compile Remove="EBAR_WebApplication\**" />
     <EmbeddedResource Remove="EBARCommon\**" />
     <EmbeddedResource Remove="EBARDataLogic\**" />
     <EmbeddedResource Remove="EBAR_BL\**" />
     <EmbeddedResource Remove="EBAR_Desktop\**" />
+    <EmbeddedResource Remove="EBAR_WebApplication\**" />
     <None Remove="EBARCommon\**" />
     <None Remove="EBARDataLogic\**" />
     <None Remove="EBAR_BL\**" />
     <None Remove="EBAR_Desktop\**" />
+    <None Remove="EBAR_WebApplication\**" />
   </ItemGroup>
 
   <ItemGroup>

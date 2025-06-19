@@ -12,6 +12,7 @@ namespace EBAR_BL
 {
     public class EBARProcess 
     {
+        AnimeListDataService animeListDataService = new AnimeListDataService();
 
         public bool ValidateEmptyInput(string userName)
         {
@@ -31,6 +32,31 @@ namespace EBAR_BL
             }
             return false;
         }
+
+
+        
+        public void AddAnimeBasedOnEmoji(string emoji, string anime)
+        {
+            animeListDataService.AddAnimeBasedOnEmoji(emoji, anime);
+        }
+
+        public void RemoveAnimeBasedOnEmoji(string emoji, string anime)
+        {
+            animeListDataService.RemoveAnimeBasedOnEmoji(emoji, anime);
+        }
+
+        public List<string> ViewAnimeList(string emoji)
+        {
+            return animeListDataService.ViewAnimeList(emoji);
+
+        }
+        public string GetRandomAnimeFromAllEmojis()
+        {
+            return animeListDataService.GetRandomAnimeFromAllEmojis();
+
+        }
+
+
 
 
     }
