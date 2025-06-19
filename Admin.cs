@@ -89,7 +89,7 @@ namespace Emoji_Based_Anime_Recommender
                         animeListDataService.RemoveAnimeBasedOnEmoji(emojiInput, animeInput);
 
                         Console.WriteLine($"{animeInput} removed on the list...");
-                        Console.WriteLine("Going back to Admin Menu...");
+                        Console.WriteLine("Going back to Previous Menu...");
                         Thread.Sleep(1000);
                         Console.Clear();
 
