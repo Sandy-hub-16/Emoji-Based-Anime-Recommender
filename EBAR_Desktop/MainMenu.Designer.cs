@@ -48,31 +48,42 @@
             // 
             // btnAdmin
             // 
+            btnAdmin.BackColor = Color.FromArgb(0, 122, 204);
             btnAdmin.Cursor = Cursors.Hand;
-            btnAdmin.Font = new Font("Franklin Gothic Medium", 9F);
+            btnAdmin.FlatAppearance.BorderSize = 0;
+            btnAdmin.FlatStyle = FlatStyle.Flat;
+            btnAdmin.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdmin.ForeColor = Color.White;
             btnAdmin.Location = new Point(356, 118);
             btnAdmin.Name = "btnAdmin";
             btnAdmin.Size = new Size(94, 29);
             btnAdmin.TabIndex = 1;
             btnAdmin.Text = "Admin";
-            btnAdmin.UseVisualStyleBackColor = true;
+            btnAdmin.UseVisualStyleBackColor = false;
             btnAdmin.Click += btnAdmin_Click;
             // 
             // btnUser
             // 
+            btnUser.BackColor = Color.FromArgb(40, 167, 69);
             btnUser.Cursor = Cursors.Hand;
-            btnUser.Font = new Font("Franklin Gothic Medium", 9F);
+            btnUser.FlatAppearance.BorderSize = 0;
+            btnUser.FlatStyle = FlatStyle.Flat;
+            btnUser.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnUser.ForeColor = Color.White;
             btnUser.Location = new Point(356, 190);
             btnUser.Name = "btnUser";
             btnUser.Size = new Size(94, 29);
             btnUser.TabIndex = 2;
             btnUser.Text = "User";
-            btnUser.UseVisualStyleBackColor = true;
+            btnUser.UseVisualStyleBackColor = false;
+            btnUser.Click += btnUser_Click;
             // 
             // btnExit
             // 
             btnExit.BackColor = Color.Red;
             btnExit.Cursor = Cursors.Hand;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Franklin Gothic Medium", 9F);
             btnExit.ForeColor = Color.White;
             btnExit.Location = new Point(356, 390);
@@ -96,6 +107,7 @@
             Controls.Add(label1);
             DoubleBuffered = true;
             Name = "MainMenu";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Main Menu";
             ResumeLayout(false);
             PerformLayout();

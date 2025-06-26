@@ -25,14 +25,24 @@ namespace EBAR_Desktop
             if (username.Equals("sandy") && password.Equals("12345"))
             {
                 MessageBox.Show("Login Successfully..");
+                var adminMenu = new AdminMenu();
+                adminMenu.Show();
+                Hide();
             }
 
             else
             {
                 MessageBox.Show("Invalid Username or Password..");
-                
+
 
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            var mainMenu = new MainMenu();
+            mainMenu.Show();
+            Hide();
         }
     }
 }

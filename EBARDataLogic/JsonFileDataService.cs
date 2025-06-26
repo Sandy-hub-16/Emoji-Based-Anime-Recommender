@@ -101,6 +101,5 @@ namespace EBARDataLogic
             return allAnime[anime];
         }
 
-        
     }
 }

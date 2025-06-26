@@ -9,6 +9,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="EBARCommon">
+      <HintPath>..\EBAR_BL\bin\Debug\net8.0\EBARCommon.dll</HintPath>
+    </Reference>
+    <Reference Include="EBARDataLogic">
+      <HintPath>..\EBAR_BL\bin\Debug\net8.0\EBARDataLogic.dll</HintPath>
+    </Reference>
+    <Reference Include="EBAR_BL">
+      <HintPath>..\EBAR_BL\bin\Debug\net8.0\EBAR_BL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

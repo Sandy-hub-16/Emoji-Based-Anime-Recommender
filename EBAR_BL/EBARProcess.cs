@@ -33,8 +33,8 @@ namespace EBAR_BL
             return false;
         }
 
+  
 
-        
         public void AddAnimeBasedOnEmoji(string emoji, string anime)
         {
             animeListDataService.AddAnimeBasedOnEmoji(emoji, anime);

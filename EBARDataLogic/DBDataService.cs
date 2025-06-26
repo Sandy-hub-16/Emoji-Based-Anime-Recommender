@@ -113,8 +113,9 @@ namespace EBARDataLogic
             return allAnime[i];
         }
 
-
-
-
+        public List<AnimeList> GetAnimeList()
+        {
+            throw new NotImplementedException();
+        } // For EBAR Desktop
     }
 }

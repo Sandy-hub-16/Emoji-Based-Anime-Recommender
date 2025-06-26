@@ -14,6 +14,7 @@ namespace EBARDataLogic
         private static readonly List<AnimeList> animeList = new List<AnimeList>();
 
 
+
         public TextFileDataService()
         {
             GetDataFromFile();
@@ -123,5 +124,7 @@ namespace EBARDataLogic
             int anime = randomAnime.Next(allAnime.Count);
             return allAnime[anime];
         }
+
+  
     }
 }
