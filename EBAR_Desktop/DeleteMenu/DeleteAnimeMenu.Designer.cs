@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DeleteAnimeMenu));
             btnBack = new Button();
             btnAngryEmoji = new Button();
             btnSadEmoji = new Button();
@@ -40,6 +41,11 @@
             // 
             // btnBack
             // 
+            btnBack.FlatAppearance.BorderColor = Color.FromArgb(0, 86, 179);
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold);
+            btnBack.ForeColor = Color.FromArgb(0, 86, 179);
             btnBack.Location = new Point(12, 400);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
@@ -166,6 +172,7 @@
             Controls.Add(btnLikeEmoji);
             Controls.Add(lblSelectEmoji);
             DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "DeleteAnimeMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DeleteAnimeMenu";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AngryEmoji));
             txtInput = new TextBox();
             btnBack = new Button();
             btnRemove = new Button();
@@ -43,22 +44,33 @@
             // 
             // btnBack
             // 
+            btnBack.BackColor = Color.White;
+            btnBack.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold);
+            btnBack.ForeColor = Color.FromArgb(0, 86, 179);
             btnBack.Location = new Point(12, 155);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
             btnBack.TabIndex = 29;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.FlatAppearance.BorderColor = Color.FromArgb(0, 86, 179);
+            btnBack.FlatAppearance.BorderSize = 2;
             // 
             // btnRemove
             // 
+            btnRemove.BackColor = Color.Red;
+            btnRemove.FlatAppearance.BorderSize = 0;
+            btnRemove.FlatStyle = FlatStyle.Flat;
+            btnRemove.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRemove.ForeColor = Color.White;
             btnRemove.Location = new Point(362, 38);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(94, 29);
             btnRemove.TabIndex = 28;
             btnRemove.Text = "Remove";
-            btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.UseVisualStyleBackColor = false;
             btnRemove.Click += btnRemove_Click;
             // 
             // label1
@@ -84,6 +96,7 @@
             Controls.Add(btnRemove);
             Controls.Add(label1);
             DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AngryEmoji";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AngryEmoji";

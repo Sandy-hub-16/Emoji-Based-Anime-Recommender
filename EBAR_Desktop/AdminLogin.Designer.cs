@@ -80,6 +80,7 @@
             // btnLogin
             // 
             btnLogin.BackColor = Color.FromArgb(0, 86, 179);
+            btnLogin.Cursor = Cursors.Hand;
             btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -126,6 +127,7 @@
             Name = "AdminLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminLogin";
+            Load += AdminLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

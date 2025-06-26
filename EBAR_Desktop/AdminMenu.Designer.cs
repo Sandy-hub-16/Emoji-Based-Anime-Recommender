@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminMenu));
             btnAdd = new Button();
             btnDelete = new Button();
             btnView = new Button();
@@ -37,6 +38,7 @@
             // btnAdd
             // 
             btnAdd.BackColor = Color.FromArgb(30, 144, 255);
+            btnAdd.Cursor = Cursors.Hand;
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -52,6 +54,7 @@
             // btnDelete
             // 
             btnDelete.BackColor = Color.FromArgb(255, 160, 122);
+            btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -66,6 +69,7 @@
             // btnView
             // 
             btnView.BackColor = Color.FromArgb(240, 230, 140);
+            btnView.Cursor = Cursors.Hand;
             btnView.FlatAppearance.BorderSize = 0;
             btnView.FlatStyle = FlatStyle.Flat;
             btnView.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -106,6 +110,7 @@
             Controls.Add(btnDelete);
             Controls.Add(btnAdd);
             DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AdminMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminMenu";

@@ -44,5 +44,10 @@ namespace EBAR_Desktop
             mainMenu.Show();
             Hide();
         }
+
+        private void AdminLogin_Load(object sender, EventArgs e)
+        {
+            AcceptButton = btnLogin; // login clicks if Enter is pressed
+        }
     }
 }

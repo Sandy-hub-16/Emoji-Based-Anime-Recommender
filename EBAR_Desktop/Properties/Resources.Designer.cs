@@ -143,6 +143,16 @@ namespace EBAR_Desktop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap random_icon {
+            get {
+                object obj = ResourceManager.GetObject("random-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap universe {
             get {
                 object obj = ResourceManager.GetObject("universe", resourceCulture);
