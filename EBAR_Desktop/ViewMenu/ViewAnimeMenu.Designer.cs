@@ -169,6 +169,7 @@
             // btnBack
             // 
             btnBack.BackColor = Color.White;
+            btnBack.Cursor = Cursors.Hand;
             btnBack.FlatAppearance.BorderColor = Color.FromArgb(0, 86, 179);
             btnBack.FlatAppearance.BorderSize = 2;
             btnBack.FlatStyle = FlatStyle.Flat;
@@ -181,6 +182,8 @@
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
+            btnBack.MouseEnter += btnBack_MouseEnter;
+            btnBack.MouseLeave += btnBack_MouseLeave;
             // 
             // btnRandomAnime
             // 

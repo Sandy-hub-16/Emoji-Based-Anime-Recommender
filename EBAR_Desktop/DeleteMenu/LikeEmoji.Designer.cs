@@ -54,23 +54,41 @@
             // 
             // btnBack
             // 
+            btnBack.BackColor = Color.White;
+            btnBack.Cursor = Cursors.Hand;
+            btnBack.FlatAppearance.BorderColor = Color.FromArgb(0, 86, 179);
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = Color.FromArgb(0, 86, 179);
             btnBack.Location = new Point(12, 155);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
             btnBack.TabIndex = 8;
             btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
+            btnBack.UseVisualStyleBackColor = false;
             btnBack.Click += btnBack_Click;
+            btnBack.MouseEnter += btnBack_MouseEnter;
+            btnBack.MouseLeave += btnBack_MouseLeave;
             // 
             // btnRemove
             // 
+            btnRemove.BackColor = Color.White;
+            btnRemove.Cursor = Cursors.Hand;
+            btnRemove.FlatAppearance.BorderColor = Color.Red;
+            btnRemove.FlatAppearance.BorderSize = 2;
+            btnRemove.FlatStyle = FlatStyle.Flat;
+            btnRemove.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRemove.ForeColor = Color.Red;
             btnRemove.Location = new Point(362, 38);
             btnRemove.Name = "btnRemove";
             btnRemove.Size = new Size(94, 29);
             btnRemove.TabIndex = 7;
             btnRemove.Text = "Remove";
-            btnRemove.UseVisualStyleBackColor = true;
+            btnRemove.UseVisualStyleBackColor = false;
             btnRemove.Click += btnRemove_Click;
+            btnRemove.MouseEnter += btnRemove_MouseEnter;
+            btnRemove.MouseLeave += btnRemove_MouseLeave;
             // 
             // label1
             // 

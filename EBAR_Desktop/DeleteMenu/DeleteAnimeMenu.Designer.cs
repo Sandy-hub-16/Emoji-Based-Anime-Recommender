@@ -41,6 +41,7 @@
             // 
             // btnBack
             // 
+            btnBack.Cursor = Cursors.Hand;
             btnBack.FlatAppearance.BorderColor = Color.FromArgb(0, 86, 179);
             btnBack.FlatAppearance.BorderSize = 2;
             btnBack.FlatStyle = FlatStyle.Flat;
@@ -53,6 +54,8 @@
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
+            btnBack.MouseEnter += btnBack_MouseEnter;
+            btnBack.MouseLeave += btnBack_MouseLeave;
             // 
             // btnAngryEmoji
             // 
@@ -61,6 +64,8 @@
             btnAngryEmoji.BackgroundImageLayout = ImageLayout.Zoom;
             btnAngryEmoji.Cursor = Cursors.Hand;
             btnAngryEmoji.FlatAppearance.BorderSize = 0;
+            btnAngryEmoji.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnAngryEmoji.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnAngryEmoji.FlatStyle = FlatStyle.Flat;
             btnAngryEmoji.Location = new Point(578, 257);
             btnAngryEmoji.Name = "btnAngryEmoji";
@@ -68,6 +73,8 @@
             btnAngryEmoji.TabIndex = 14;
             btnAngryEmoji.UseVisualStyleBackColor = false;
             btnAngryEmoji.Click += btnAngryEmoji_Click;
+            btnAngryEmoji.MouseEnter += btnAngryEmoji_MouseEnter;
+            btnAngryEmoji.MouseLeave += btnAngryEmoji_MouseLeave;
             // 
             // btnSadEmoji
             // 
@@ -76,6 +83,8 @@
             btnSadEmoji.BackgroundImageLayout = ImageLayout.Zoom;
             btnSadEmoji.Cursor = Cursors.Hand;
             btnSadEmoji.FlatAppearance.BorderSize = 0;
+            btnSadEmoji.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnSadEmoji.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnSadEmoji.FlatStyle = FlatStyle.Flat;
             btnSadEmoji.Location = new Point(320, 257);
             btnSadEmoji.Name = "btnSadEmoji";
@@ -83,6 +92,8 @@
             btnSadEmoji.TabIndex = 13;
             btnSadEmoji.UseVisualStyleBackColor = false;
             btnSadEmoji.Click += btnSadEmoji_Click;
+            btnSadEmoji.MouseEnter += btnSadEmoji_MouseEnter;
+            btnSadEmoji.MouseLeave += btnSadEmoji_MouseLeave;
             // 
             // btnWowEmoji
             // 
@@ -91,6 +102,8 @@
             btnWowEmoji.BackgroundImageLayout = ImageLayout.Zoom;
             btnWowEmoji.Cursor = Cursors.Hand;
             btnWowEmoji.FlatAppearance.BorderSize = 0;
+            btnWowEmoji.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnWowEmoji.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnWowEmoji.FlatStyle = FlatStyle.Flat;
             btnWowEmoji.Location = new Point(68, 257);
             btnWowEmoji.Name = "btnWowEmoji";
@@ -98,6 +111,8 @@
             btnWowEmoji.TabIndex = 12;
             btnWowEmoji.UseVisualStyleBackColor = false;
             btnWowEmoji.Click += btnWowEmoji_Click;
+            btnWowEmoji.MouseEnter += btnWowEmoji_MouseEnter;
+            btnWowEmoji.MouseLeave += btnWowEmoji_MouseLeave;
             // 
             // btnLaughEmoji
             // 
@@ -106,6 +121,8 @@
             btnLaughEmoji.BackgroundImageLayout = ImageLayout.Zoom;
             btnLaughEmoji.Cursor = Cursors.Hand;
             btnLaughEmoji.FlatAppearance.BorderSize = 0;
+            btnLaughEmoji.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLaughEmoji.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnLaughEmoji.FlatStyle = FlatStyle.Flat;
             btnLaughEmoji.Location = new Point(578, 95);
             btnLaughEmoji.Name = "btnLaughEmoji";
@@ -113,6 +130,8 @@
             btnLaughEmoji.TabIndex = 11;
             btnLaughEmoji.UseVisualStyleBackColor = false;
             btnLaughEmoji.Click += btnLaughEmoji_Click;
+            btnLaughEmoji.MouseEnter += btnLaughEmoji_MouseEnter;
+            btnLaughEmoji.MouseLeave += btnLaughEmoji_MouseLeave;
             // 
             // btnHeartEmoji
             // 
@@ -121,6 +140,8 @@
             btnHeartEmoji.BackgroundImageLayout = ImageLayout.Zoom;
             btnHeartEmoji.Cursor = Cursors.Hand;
             btnHeartEmoji.FlatAppearance.BorderSize = 0;
+            btnHeartEmoji.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnHeartEmoji.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnHeartEmoji.FlatStyle = FlatStyle.Flat;
             btnHeartEmoji.Location = new Point(309, 84);
             btnHeartEmoji.Name = "btnHeartEmoji";
@@ -128,6 +149,8 @@
             btnHeartEmoji.TabIndex = 10;
             btnHeartEmoji.UseVisualStyleBackColor = false;
             btnHeartEmoji.Click += btnHeartEmoji_Click;
+            btnHeartEmoji.MouseEnter += btnHeartEmoji_MouseEnter;
+            btnHeartEmoji.MouseLeave += btnHeartEmoji_MouseLeave;
             // 
             // btnLikeEmoji
             // 
@@ -136,6 +159,8 @@
             btnLikeEmoji.BackgroundImageLayout = ImageLayout.Zoom;
             btnLikeEmoji.Cursor = Cursors.Hand;
             btnLikeEmoji.FlatAppearance.BorderSize = 0;
+            btnLikeEmoji.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            btnLikeEmoji.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btnLikeEmoji.FlatStyle = FlatStyle.Flat;
             btnLikeEmoji.Location = new Point(68, 84);
             btnLikeEmoji.Name = "btnLikeEmoji";
@@ -143,6 +168,8 @@
             btnLikeEmoji.TabIndex = 9;
             btnLikeEmoji.UseVisualStyleBackColor = false;
             btnLikeEmoji.Click += btnLikeEmoji_Click;
+            btnLikeEmoji.MouseEnter += btnLikeEmoji_MouseEnter;
+            btnLikeEmoji.MouseLeave += btnLikeEmoji_MouseLeave;
             // 
             // lblSelectEmoji
             // 

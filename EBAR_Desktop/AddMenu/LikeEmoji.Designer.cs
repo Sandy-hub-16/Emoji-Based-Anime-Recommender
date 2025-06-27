@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            btnAdd = new Button();
-            btnBack = new Button();
             txtInput = new TextBox();
             lblStatus = new Label();
+            btnAdd = new Button();
+            btnBack = new Button();
             SuspendLayout();
             // 
             // label1
@@ -45,26 +45,6 @@
             label1.Size = new Size(91, 20);
             label1.TabIndex = 0;
             label1.Text = "Add Anime :";
-            // 
-            // btnAdd
-            // 
-            btnAdd.Location = new Point(337, 38);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(94, 29);
-            btnAdd.TabIndex = 2;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
-            // 
-            // btnBack
-            // 
-            btnBack.Location = new Point(12, 155);
-            btnBack.Name = "btnBack";
-            btnBack.Size = new Size(94, 29);
-            btnBack.TabIndex = 3;
-            btnBack.Text = "Back";
-            btnBack.UseVisualStyleBackColor = true;
-            btnBack.Click += btnBack_Click;
             // 
             // txtInput
             // 
@@ -83,6 +63,43 @@
             lblStatus.Size = new Size(0, 20);
             lblStatus.TabIndex = 5;
             // 
+            // btnAdd
+            // 
+            btnAdd.BackColor = Color.White;
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.FlatAppearance.BorderColor = Color.LimeGreen;
+            btnAdd.FlatAppearance.BorderSize = 2;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.LimeGreen;
+            btnAdd.Location = new Point(337, 38);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(94, 29);
+            btnAdd.TabIndex = 11;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            btnAdd.MouseEnter += btnAdd_MouseEnter;
+            btnAdd.MouseLeave += btnAdd_MouseLeave;
+            // 
+            // btnBack
+            // 
+            btnBack.Cursor = Cursors.Hand;
+            btnBack.FlatAppearance.BorderColor = Color.FromArgb(0, 86, 179);
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = Color.FromArgb(0, 86, 179);
+            btnBack.Location = new Point(12, 155);
+            btnBack.Name = "btnBack";
+            btnBack.Size = new Size(94, 29);
+            btnBack.TabIndex = 12;
+            btnBack.Text = "Back";
+            btnBack.UseVisualStyleBackColor = true;
+            btnBack.Click += btnBack_Click;
+            btnBack.MouseEnter += btnBack_MouseEnter;
+            btnBack.MouseLeave += btnBack_MouseLeave;
+            // 
             // LikeEmoji
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -90,10 +107,10 @@
             BackgroundImage = Properties.Resources.background;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(445, 206);
-            Controls.Add(lblStatus);
-            Controls.Add(txtInput);
             Controls.Add(btnBack);
             Controls.Add(btnAdd);
+            Controls.Add(lblStatus);
+            Controls.Add(txtInput);
             Controls.Add(label1);
             DoubleBuffered = true;
             Name = "LikeEmoji";
@@ -105,9 +122,9 @@
         #endregion
 
         private Label label1;
-        private Button btnAdd;
-        private Button btnBack;
         private TextBox txtInput;
         private Label lblStatus;
+        private Button btnAdd;
+        private Button btnBack;
     }
 }

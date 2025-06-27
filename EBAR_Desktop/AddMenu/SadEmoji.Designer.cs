@@ -54,23 +54,40 @@
             // 
             // btnAdd
             // 
+            btnAdd.BackColor = Color.White;
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.FlatAppearance.BorderColor = Color.LimeGreen;
+            btnAdd.FlatAppearance.BorderSize = 2;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.ForeColor = Color.LimeGreen;
             btnAdd.Location = new Point(337, 38);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 29);
-            btnAdd.TabIndex = 8;
+            btnAdd.TabIndex = 12;
             btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
+            btnAdd.MouseEnter += btnAdd_MouseEnter;
+            btnAdd.MouseLeave += btnAdd_MouseLeave;
             // 
             // btnBack
             // 
+            btnBack.Cursor = Cursors.Hand;
+            btnBack.FlatAppearance.BorderColor = Color.FromArgb(0, 86, 179);
+            btnBack.FlatAppearance.BorderSize = 2;
+            btnBack.FlatStyle = FlatStyle.Flat;
+            btnBack.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBack.ForeColor = Color.FromArgb(0, 86, 179);
             btnBack.Location = new Point(12, 155);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(94, 29);
-            btnBack.TabIndex = 9;
+            btnBack.TabIndex = 13;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = true;
             btnBack.Click += btnBack_Click;
+            btnBack.MouseEnter += btnBack_MouseEnter;
+            btnBack.MouseLeave += btnBack_MouseLeave;
             // 
             // SadEmoji
             // 
@@ -83,6 +100,7 @@
             Controls.Add(btnAdd);
             Controls.Add(txtInput);
             Controls.Add(label1);
+            DoubleBuffered = true;
             Name = "SadEmoji";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SadEmoji";

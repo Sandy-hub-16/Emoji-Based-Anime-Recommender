@@ -1,4 +1,5 @@
 ﻿using EBAR_BL;
+using EBAR_Desktop.ViewMenu;
 using EBARDataLogic;
 using System;
 using System.Collections.Generic;
@@ -15,10 +16,12 @@ namespace EBAR_Desktop.AddMenu
     public partial class LaughEmoji : Form
     {
         EBARProcess eBARProcess = new EBARProcess();
+        ViewAnimeMenu buttonEffect = new ViewAnimeMenu();
         public LaughEmoji()
         {
             InitializeComponent();
         }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -43,5 +46,27 @@ namespace EBAR_Desktop.AddMenu
             addMenu.Show();
             Hide();
         }
+
+        #region--Mouse Enter--
+        private void btnAdd_MouseEnter(object sender, EventArgs e)
+        {
+            buttonEffect.ChangeButtonColor(btnAdd, Color.LimeGreen, Color.White);
+        }
+        private void btnBack_MouseEnter(object sender, EventArgs e)
+        {
+            buttonEffect.ChangeButtonColor(btnBack, Color.FromArgb(0, 86, 179), Color.White);
+        }
+        #endregion
+
+        #region--Mouse Leave--
+        private void btnAdd_MouseLeave(object sender, EventArgs e)
+        {
+            buttonEffect.ChangeButtonColorToDefault(btnAdd, Color.White, Color.LimeGreen);
+        }
+        private void btnBack_MouseLeave(object sender, EventArgs e)
+        {
+            buttonEffect.ChangeButtonColorToDefault(btnBack, Color.White, Color.FromArgb(0, 86, 179));
+        }
+        #endregion
     }
 }

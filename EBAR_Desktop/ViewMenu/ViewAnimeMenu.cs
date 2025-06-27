@@ -106,6 +106,10 @@ namespace EBAR_Desktop.ViewMenu
         {
             StretchButtonImage(btnRandomAnime);
         }
+        private void btnBack_MouseEnter(object sender, EventArgs e)
+        {
+            ChangeButtonColor(btnBack, Color.FromArgb(0, 86, 179), Color.White);
+        }
         #endregion
 
 
@@ -139,6 +143,10 @@ namespace EBAR_Desktop.ViewMenu
         {
             ResetButtonImage(btnRandomAnime);
         }
+        private void btnBack_MouseLeave(object sender, EventArgs e)
+        {
+            ChangeButtonColorToDefault(btnBack, Color.White, Color.FromArgb(0, 86, 179));
+        }
         #endregion
 
         public void StretchButtonImage(Button button)
@@ -150,10 +158,21 @@ namespace EBAR_Desktop.ViewMenu
             button.BackgroundImageLayout = ImageLayout.Zoom;
         }
 
-      
+        public void ChangeButtonColor(Button button, Color backgroundColor, Color fontColor)
+        {
+            button.BackColor = backgroundColor;
+            button.ForeColor = fontColor;
+            button.FlatAppearance.BorderSize = 0;
+        }
+        public void ChangeButtonColorToDefault(Button button, Color backgroundColor, Color fontColor)
+        {
+            button.BackColor = backgroundColor;
+            button.ForeColor = fontColor;
+            button.FlatAppearance.BorderSize = 2;
+        }
 
-     
 
-       
+
+        
     }
 }
