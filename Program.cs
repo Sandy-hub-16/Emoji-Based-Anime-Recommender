@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Mail;
 using EBAR_BL;
 
 namespace Emoji_Based_Anime_Recommender
