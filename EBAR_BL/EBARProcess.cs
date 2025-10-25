@@ -38,11 +38,15 @@ namespace EBAR_BL
         public void AddAnimeBasedOnEmoji(string emoji, string anime)
         {
             animeListDataService.AddAnimeBasedOnEmoji(emoji, anime);
+            EmailService email = new EmailService();
+            email.SendEmail(anime, "added");
         }
 
         public void RemoveAnimeBasedOnEmoji(string emoji, string anime)
         {
             animeListDataService.RemoveAnimeBasedOnEmoji(emoji, anime);
+            EmailService email = new EmailService();
+            email.SendEmail(anime, "removed");
         }
 
         public List<string> ViewAnimeList(string emoji)

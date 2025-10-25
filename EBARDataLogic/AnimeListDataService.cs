@@ -13,8 +13,8 @@ namespace EBARDataLogic
 
         public AnimeListDataService()
         {
-            animeListDataService = new InMemoryDataService();
-            //animeListDataService = new TextFileDataService();
+            //animeListDataService = new InMemoryDataService();
+            animeListDataService = new TextFileDataService();
             //animeListDataService = new JsonFileDataService();
             //animeListDataService = new DBDataService();
         }
@@ -23,15 +23,11 @@ namespace EBARDataLogic
         public void AddAnimeBasedOnEmoji(string emoji, string anime)
         {
             animeListDataService.AddAnimeBasedOnEmoji(emoji, anime);
-            EmailService email = new EmailService();
-            email.SendEmail(anime, "added");
         }
 
         public void RemoveAnimeBasedOnEmoji(string emoji, string anime)
         {
             animeListDataService.RemoveAnimeBasedOnEmoji(emoji,anime);
-            EmailService email = new EmailService();
-            email.SendEmail(anime, "removed");
         }
 
         public List<string> ViewAnimeList(string emoji)

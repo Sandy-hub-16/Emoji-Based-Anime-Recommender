@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using MailKit.Net.Smtp;
 using MimeKit;
 
-namespace EBARCommon
+namespace EBAR_BL
 {
     public class EmailService
     {

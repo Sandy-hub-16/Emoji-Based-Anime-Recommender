@@ -15,7 +15,6 @@ namespace Emoji_Based_Anime_Recommender
     // *for practice purpose*
     public class Admin : EBARProcess  
     {
-        AnimeListDataService animeListDataService = new AnimeListDataService();
 
         public void ShowAdminMenu()
         {
@@ -56,7 +55,7 @@ namespace Emoji_Based_Anime_Recommender
                         animeInput = User.GetInput("Add : ");
 
 
-                        animeListDataService.AddAnimeBasedOnEmoji(emojiInput, animeInput);
+                        AddAnimeBasedOnEmoji(emojiInput, animeInput);
 
                         Console.WriteLine($"{animeInput} added on the list...");
                         Console.WriteLine("Going back to Admin Menu...");
@@ -86,7 +85,7 @@ namespace Emoji_Based_Anime_Recommender
 
                         animeInput = User.GetInput("Remove : ");
 
-                        animeListDataService.RemoveAnimeBasedOnEmoji(emojiInput, animeInput);
+                        RemoveAnimeBasedOnEmoji(emojiInput, animeInput);
 
                         Console.WriteLine($"{animeInput} removed on the list...");
                         Console.WriteLine("Going back to Previous Menu...");
