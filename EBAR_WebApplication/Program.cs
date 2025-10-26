@@ -1,4 +1,6 @@
 
+using EBAR_BL;
+
 namespace EBAR_WebApplication
 {
     public class Program
@@ -13,6 +15,9 @@ namespace EBAR_WebApplication
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddScoped<EmailService>();
+            builder.Services.AddScoped<EBAR_BL.EBARProcess>();
 
             var app = builder.Build();
 

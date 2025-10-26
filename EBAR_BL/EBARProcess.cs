@@ -13,6 +13,13 @@ namespace EBAR_BL
     {
         AnimeListDataService animeListDataService = new AnimeListDataService();
 
+        private readonly EmailService _emailService;
+
+        public EBARProcess(EmailService emailService)
+        {
+            _emailService = emailService;
+        }
+
         public bool ValidateEmptyInput(string userName)
         {
             if (string.IsNullOrWhiteSpace(userName))
@@ -36,16 +43,14 @@ namespace EBAR_BL
 
         public void AddAnimeBasedOnEmoji(string emoji, string anime)
         {
-            animeListDataService.AddAnimeBasedOnEmoji(emoji, anime);
-            EmailService email = new EmailService();
-            email.SendEmail(anime, "added");
+            animeListDataService.AddAnimeBasedOnEmoji(emoji, anime); 
+            _emailService.SendEmail(anime, "added");
         }
 
         public void RemoveAnimeBasedOnEmoji(string emoji, string anime)
         {
             animeListDataService.RemoveAnimeBasedOnEmoji(emoji, anime);
-            EmailService email = new EmailService();
-            email.SendEmail(anime, "removed");
+            _emailService.SendEmail(anime, "removed");
         }
 
         public List<string> ViewAnimeList(string emoji)

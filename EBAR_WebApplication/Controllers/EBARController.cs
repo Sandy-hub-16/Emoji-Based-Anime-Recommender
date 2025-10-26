@@ -8,20 +8,25 @@ namespace EBAR_WebApplication.Controllers
     [ApiController]
     public class EBARController : ControllerBase
     {
-        EBAR_BL.EBARProcess ebarProcess = new EBAR_BL.EBARProcess();
+        private readonly EBAR_BL.EBARProcess _ebarProcess;
 
-   
+        public EBARController(EBAR_BL.EBARProcess ebarProcess)
+        {
+            _ebarProcess = ebarProcess;
+        }
+
+
 
         [HttpGet("View Anime List")]
         public List<string> ViewAnimeList(string emoji)
         {
-            return ebarProcess.ViewAnimeList(emoji);
+            return _ebarProcess.ViewAnimeList(emoji);
         }
 
         [HttpGet("Get Random Anime")]
         public string GetRandomAnimeFromAllEmojis()
         {
-            return ebarProcess.GetRandomAnimeFromAllEmojis();
+            return _ebarProcess.GetRandomAnimeFromAllEmojis();
         }
 
         [HttpPost("Add Anime Based on Emoji")]
@@ -29,14 +34,14 @@ namespace EBAR_WebApplication.Controllers
         public void AddAnimeBasedOnEmoji(string emoji, string anime)
         {
          
-            ebarProcess.AddAnimeBasedOnEmoji(emoji, anime);
+            _ebarProcess.AddAnimeBasedOnEmoji(emoji, anime);
         }
 
         [HttpDelete("Remove Anime Based on Emoji")]
         
         public void RemoveAnimeBasedOnEmoji(string emoji, string anime)
         {
-            ebarProcess.RemoveAnimeBasedOnEmoji(emoji, anime);
+            _ebarProcess.RemoveAnimeBasedOnEmoji(emoji, anime);
         }
     }
 }
